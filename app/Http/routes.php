@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/list', 'VehicleController@index');
+Route::get('/show/{id}', 'BikeController@show');
