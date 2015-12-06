@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Dailos\Repositories;
+namespace App\Dailos\Repositories;
 
 
 use App\Dailos\Entities\Bike;

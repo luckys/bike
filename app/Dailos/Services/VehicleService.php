@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Dailos\Services;
+namespace App\Dailos\Services;
 
 use App\Dailos\Repositories\VehicleRepository;
 
-class VehicleService
+abstract class VehicleService
 {
     protected $vehicleRepository;
 

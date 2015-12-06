@@ -4,7 +4,7 @@ namespace App\Dailos\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VehicleRepository
+abstract class VehicleRepository
 {
 
     protected $model;

@@ -15,5 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', 'VehicleController@index');
-Route::get('/show/{id}', 'BikeController@show');
+Route::group(['prefix' => 'bikes'], function() {
+    Route::get('/', 'BikeController@index');
+    Route::get('/show/{id}', 'BikeController@show');
+});
+
+Route::group(['prefix' => 'motorbikes'], function() {
+    Route::get('/', 'MotorbikeController@index');
+    Route::get('/show/{id}', 'MotorbikeController@show');
+});
