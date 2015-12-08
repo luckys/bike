@@ -16,9 +16,11 @@ class BikeController extends Controller
 
     public function index()
     {
-        $brands = $this->brandService->all();
-        $vehicles = $this->bikeService->all();
-        dd($vehicles);
+        return view('list.index', [
+            'brands' => $this->brandService->all(),
+            'vehicles' => $this->bikeService->all(),
+            'type' => 'bike',
+        ]);
     }
 
     public function show($id){
