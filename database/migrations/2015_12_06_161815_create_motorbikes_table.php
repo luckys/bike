@@ -14,11 +14,11 @@ class CreateMotorbikesTable extends Migration
     {
         Schema::create('motorbikes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('brand_id')->unsigned();
-            $table->string('model');
+            $table->integer('category_id')->unsigned();
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

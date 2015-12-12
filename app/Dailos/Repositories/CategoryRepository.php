@@ -2,14 +2,14 @@
 
 namespace App\Dailos\Repositories;
 
-use App\Dailos\Entities\Brand;
+use App\Dailos\Entities\Category;
 
-class BrandRepository
+class CategoryRepository
 {
 
     protected $model;
 
-    public function __construct(Brand $model)
+    public function __construct(Category $model)
     {
         $this->model = $model;
     }

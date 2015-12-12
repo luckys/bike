@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Dailos\Services\BrandService;
+use App\Dailos\Services\CategoryService;
 use App\Dailos\Services\MotorbikeService;
 
 class MotorbikeController extends Controller
 {
     protected $motorbikeService;
+    protected $categoryService;
 
-    public function __construct(MotorbikeService $motorbikeService, BrandService $brandService){
+    public function __construct(MotorbikeService $motorbikeService, CategoryService $categoryService)
+    {
         $this->motorbikeService = $motorbikeService;
-        $this->brandService = $brandService;
+        $this->categoryService = $categoryService;
     }
 
     public function index()
     {
-        $brands = $this->brandService->all();
+        $categories = $this->categoryService->all();
         $motorbikes = $this->motorbikeService->all();
-        dd($brands);
         dd($motorbikes);
     }
 

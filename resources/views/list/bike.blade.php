@@ -1,2 +1,1 @@
-{{$vehicle->brand}}
-{{$vehicle->model}}
+{{$vehicle->name}}
