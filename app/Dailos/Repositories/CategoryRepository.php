@@ -2,21 +2,20 @@
 
 namespace App\Dailos\Repositories;
 
+
 use App\Dailos\Entities\Category;
 
 class CategoryRepository
 {
+    protected $category;
 
-    protected $model;
-
-    public function __construct(Category $model)
+    public function __construct(Category $category)
     {
-        $this->model = $model;
+        $this->category = $category;
     }
 
-    public function all($filter = [])
+    public function all()
     {
-        return $this->model->all();
+        return $this->category->all();
     }
-
 }

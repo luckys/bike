@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBikesTable extends Migration
+class CreateVehiclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,14 @@ class CreateBikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bikes', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
+            $table->tinyInteger('type');
             $table->string('name');
+            $table->integer('category_id')->unsigned();
+            $table->integer('price_high');
+            $table->integer('price_medium');
+            $table->integer('price_low');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('categories');
@@ -29,6 +33,6 @@ class CreateBikesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bikes');
+        Schema::drop('vehicles');
     }
 }

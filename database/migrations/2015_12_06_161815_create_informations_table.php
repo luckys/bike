@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMotorbikesTable extends Migration
+class CreateInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,16 @@ class CreateMotorbikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('motorbikes', function (Blueprint $table) {
+        Schema::create('informations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
             $table->string('name');
+            $table->tinyInteger('type')->nullable();
+            $table->tinyInteger('fieldtype');
+            $table->string('en');
+            $table->string('de');
+            $table->string('es');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateMotorbikesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('motorbikes');
+        Schema::drop('informations');
     }
 }

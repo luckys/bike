@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Dailos\Services\CategoryService;
-use App\Dailos\Services\BikeService;
+use App\Dailos\Repositories\CategoryRepository;
+use App\Dailos\Repositories\VehicleRepository;
 
-class BikeController extends Controller
+class VehicleController extends Controller
 {
-    protected $bikeService;
-    protected $categoryService;
+    protected $vehicleRepository;
+    protected $categoryRepository;
 
-    public function __construct(BikeService $bikeService, CategoryService $categoryService)
+    public function __construct(VehicleRepository $vehicleRepository, CategoryRepository $categoryRepository)
     {
-        $this->bikeService = $bikeService;
-        $this->categoryService = $categoryService;
+        $this->vehicleRepository = $vehicleRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
-    public function index()
+    public function index($type)
     {
-        return view('list.index', [
-            'categories' => $this->categoryService->all(),
-            'vehicles' => $this->bikeService->all(),
-            'type' => 'bike',
+        return view('vehicle.index', [
+            'categories' => $this->categoryRepository->with('information')->all($type),
+            'vehicles' => $this->vehicleRepository->all($type),
+            'type' => $type,
         ]);
     }
 
     public function show($id){
-        dd($this->bikeService->get($id));
+        $vehicle = $this->vehicleRepository->with('information')->get($id);
+        return view('vehicle.show', ['vehicle' => $vehicle]);
     }
 
 }

@@ -2,26 +2,26 @@
 
 namespace App\Dailos\Repositories;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Dailos\Entities\Vehicle;
 
-abstract class VehicleRepository
+class VehicleRepository
 {
 
-    protected $model;
+    protected $vehicle;
 
-    public function __construct(Model $model)
+    public function __construct(Vehicle $vehicle)
     {
-        $this->model =$model;
+        $this->vehicle = $vehicle;
     }
 
     public function get($id)
     {
-        return $this->model->firstOrFail($id);
+        return $this->vehicle->firstOrFail($id);
     }
 
     public function all($filter = [])
     {
-        return $this->model->all();
+        return $this->vehicle->all();
     }
 
 }

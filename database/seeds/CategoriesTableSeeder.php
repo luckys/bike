@@ -1,13 +1,13 @@
 <?php
 
-use App\Dailos\Entities\Category;
+use App\Dailos\Entities\Vehicle;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
 {
     public function run(){
-        $this->insert(['Custom', 'Scooter', 'Motorbike'], Category::TYPE_MOTORBIKE);
-        $this->insert(['Road', 'MTB', 'EBike'], Category::TYPE_BIKE);
+        $this->insert(['Custom', 'Scooter', 'Trail'], Vehicle::TYPE_MOTORBIKE);
+        $this->insert(['Road', 'MTB', 'City', 'Treking', 'E-Bike'], Vehicle::TYPE_BIKE);
     }
 
     private function insert($categories, $type)
