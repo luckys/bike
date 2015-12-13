@@ -18,16 +18,18 @@ class VehicleController extends Controller
 
     public function index($type)
     {
-        return view('vehicle.index', [
-            'categories' => $this->categoryRepository->with('information')->all($type),
+        return view('vehicle.list.index', [
+            'categories' => $this->categoryRepository->all($type),
             'vehicles' => $this->vehicleRepository->all($type),
             'type' => $type,
         ]);
     }
 
     public function show($id){
-        $vehicle = $this->vehicleRepository->with('information')->get($id);
-        return view('vehicle.show', ['vehicle' => $vehicle]);
+        return view('vehicle.show.index', [
+                'vehicle' => $this->vehicleRepository->get($id)
+            ]
+        );
     }
 
 }

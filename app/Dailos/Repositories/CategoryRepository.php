@@ -14,8 +14,8 @@ class CategoryRepository
         $this->category = $category;
     }
 
-    public function all()
+    public function all($type)
     {
-        return $this->category->all();
+        return $this->category->type($type)->get();
     }
 }
