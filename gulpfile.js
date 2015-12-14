@@ -17,6 +17,7 @@ elixir(function(mix) {
 
 elixir(function (mix) {
     mix.scripts([
+        'jquery-2.1.4.js',
         '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
         'app.js'
     ], 'public/js/app.js');

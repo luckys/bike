@@ -1,7 +1,12 @@
 @extends('layout.main')
 @section('content')
-    <div id="home">
-        @include('home._teaser')
+        <!-- Page Content -->
+<div class="container">
+    <hr>
+    @include('home._business_information')
+            <!-- /.row -->
+    <hr>
         @include('home._offers')
+    <hr>
     </div>
 @endsection
