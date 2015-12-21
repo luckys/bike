@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dailos\Repositories\CategoryRepository;
 use App\Dailos\Repositories\VehicleRepository;
+use \Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
@@ -16,13 +17,15 @@ class VehicleController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function index($type)
+    public function index(Request $request, $type)
     {
-        return view('vehicle.list.index', [
-            'categories' => $this->categoryRepository->all($type),
-            'vehicles' => $this->vehicleRepository->all($type),
-            'type' => $type,
-        ]);
+        $view = '_list';
+        $data = ['vehicles' => $this->vehicleRepository->all($type)];
+        if (!$request->ajax()) {
+            $view = 'index';
+            $data['categories'] = $this->categoryRepository->all($type);
+        }
+        return view('vehicle.list.' . $view, $data);
     }
 
     public function show($id){

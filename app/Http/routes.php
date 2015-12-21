@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'vehicles'], function () {
-    Route::get('/list/{type}', 'VehicleController@index');
+    Route::get('/{type}', 'VehicleController@index');
     Route::get('/show/{id}', 'VehicleController@show');
 });
