@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Dailos\Repositories;
+namespace App\Repositories;
 
-
-use App\Dailos\Entities\Information;
+use App\Models\Information;
 
 class InformationRepository
 {

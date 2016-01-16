@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Dailos\Repositories;
+namespace App\Repositories;
 
-use App\Dailos\Entities\Vehicle;
+use App\Models\Vehicle;
 
 class VehicleRepository
 {

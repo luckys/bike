@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Dailos\Repositories\CategoryRepository;
-use App\Dailos\Repositories\VehicleRepository;
+use App\Repositories\CategoryRepository;
+use App\Repositories\VehicleRepository;
 use \Illuminate\Http\Request;
 
 class VehicleController extends Controller
