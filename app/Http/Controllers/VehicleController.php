@@ -17,13 +17,13 @@ class VehicleController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function index(Request $request, $type)
+    public function index(Request $request, $type, $category = null)
     {
         $view = '_list';
-        $data = ['vehicles' => $this->vehicleRepository->all($type)];
+        $data = ['vehicles' => $this->vehicleRepository->all($type,$category)];
         if (!$request->ajax()) {
             $view = 'index';
-            $data['categories'] = $this->categoryRepository->all($type);
+            $data['categories'] = $this->categoryRepository->all($type,$category);
         }
         return view('vehicle.list.' . $view, $data);
     }

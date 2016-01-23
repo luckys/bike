@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attachment extends Model
 {
+    protected $table = 'attachments';
+
     const TYPE_IMAGE = 1;
     const TYPE_VIDEOURL = 2;
     const TYPE_PDF = 3;

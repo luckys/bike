@@ -6,25 +6,35 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    const TYPE_MOTORBIKE = 1;
-    const TYPE_BIKE = 2;
-    const TYPE_MOBILITY = 3;
-
     public function informations()
     {
-        return $this->belongsToMany('App\Dailos\Entities\Information');
+        return $this->belongsToMany('App\Models\Information');
     }
 
-
-    public function getType()
+    public function attachments()
     {
-        switch ($this->type) {
-            case self::TYPE_BIKE:
-                return 'bike';
-            case self::TYPE_MOTORBIKE:
-                return 'motorbike';
-            case self::TYPE_MOBILITY:
-                return 'mobility';
-        }
+        return $this->hasMany('App\Models\Attachment');
+    }
+
+    public function category()
+    {
+        return $this->BelongsTo('App\Models\Category');
+    }
+
+    public function scopeType($query,$type)
+    {
+        $query->whereHas('category', function($q) use ($type){
+            $q->where('type', $type);
+        });
+    }
+
+    public function scopeCategory($query,$category)
+    {
+        $query->where('category_id', $category);
+    }
+
+    public function getTypeNameAttribute()
+    {
+        return $this->category->type;
     }
 }

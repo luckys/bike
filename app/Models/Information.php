@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Information extends Model
 {
+    protected $table = 'informations';
+
     const FIELDTYPE_INPUT = 1;
     const FIELDTYPE_CHECKBOX = 2;
 

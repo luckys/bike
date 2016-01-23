@@ -16,16 +16,19 @@ class VehicleRepository
 
     public function get($id)
     {
-        return $this->vehicle->with('information', 'attachment')->firstOrFail($id);
+        return $this->vehicle->with('informations', 'attachments')->firstOrFail($id);
     }
 
-    public function all($filter = [])
+    public function all($type, $category)
     {
-        $vehicle = $this->vehicle->with('information', 'attachment');
-        if (isset($filter['type'])) {
-            $vehicle = $vehicle->type($filter['type']);
-        }
+        $vehicle = $this->vehicle->with('informations', 'attachments','category')->first();
 
+        if ($category) {
+            $vehicle = $vehicle->category($category);
+        }else{
+            $vehicle = $vehicle->type($type);
+        }
+       
         return $vehicle->get();
     }
 
