@@ -12,10 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('frontend.home.index');
 });
 
 Route::group(['prefix' => 'vehicles'], function () {
     Route::get('/{type}/{category?}', 'VehicleController@index');
     Route::get('/show/{id}', 'VehicleController@show');
+});
+
+
+Route::group(['prefix' => 'admin'], function(){
+   Route::get('/category', 'Admin\CategoryController@index');
 });

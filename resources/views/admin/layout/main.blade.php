@@ -14,10 +14,9 @@
     <![endif]-->
 </head>
 <body>
-@include('layout._menu')
-@include('layout._header')
+
 @yield('content')
-@include('layout._footer')
+
 
 <script src="{{ elixir('js/app.js') }}"></script>
 </body>

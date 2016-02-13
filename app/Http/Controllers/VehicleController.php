@@ -25,11 +25,11 @@ class VehicleController extends Controller
             $view = 'index';
             $data['categories'] = $this->categoryRepository->all($type,$category);
         }
-        return view('vehicle.list.' . $view, $data);
+        return view('frontend.vehicle.list.' . $view, $data);
     }
 
     public function show($id){
-        return view('vehicle.show.index', [
+        return view('frontend.vehicle.show.index', [
                 'vehicle' => $this->vehicleRepository->get($id)
             ]
         );

@@ -28,7 +28,7 @@ class VehicleRepository
         }else{
             $vehicle = $vehicle->type($type);
         }
-       
+
         return $vehicle->get();
     }
 

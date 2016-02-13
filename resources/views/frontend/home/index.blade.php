@@ -1,12 +1,12 @@
-@extends('layout.main')
+@extends('frontend.layout.main')
 @section('content')
         <!-- Page Content -->
 <div class="container">
     <hr>
-    @include('home._business_information')
+    @include('frontend.home._business_information')
             <!-- /.row -->
     <hr>
-        @include('home._offers')
+        @include('frontend.home._offers')
     <hr>
     </div>
 @endsection

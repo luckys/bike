@@ -13,8 +13,11 @@ class CategoryRepository
         $this->category = $category;
     }
 
-    public function all($type)
+    public function all($type = null)
     {
-        return $this->category->type($type)->get();
+        if($type){
+            return $this->category->type($type)->get();
+        }
+        return $this->category->get();
     }
 }

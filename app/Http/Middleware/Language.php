@@ -28,9 +28,11 @@ class Language
         $locale = $request->segment(1);
 
         if (!array_key_exists($locale, $this->app->config->get('app.locales'))) {
-            $segments = $request->segments();
-            $segments[0] = $this->app->config->get('app.fallback_locale');
-
+            $locale_var =  $locale == 'admin' ? 'admin_locale' : 'fallback_locale';
+            $segments[0] = $this->app->config->get('app.' . $locale_var);
+            foreach ($request->segments() as $segment){
+                $segments[] = $segment;
+            }
             return $this->redirector->to(implode('/', $segments));
         }
 
