@@ -11,16 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
 
-Route::group(['prefix' => 'vehicles'], function () {
-    Route::get('/{type}/{category?}', 'VehicleController@index');
-    Route::get('/show/{id}', 'VehicleController@show');
-});
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
+    Route::group(['prefix' => 'admin'], function(){
+        Route::get('/category', 'Admin\CategoryController@index');
+        Route::get('/', 'HomeController@index');
+    });
 
-Route::group(['prefix' => 'admin'], function(){
-   Route::get('/category', 'Admin\CategoryController@index');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::group(['prefix' => 'vehicles'], function () {
+        Route::get('/{type}/{category?}', 'VehicleController@index');
+        Route::get('/show/{id}', 'VehicleController@show');
+    });
+
 });
