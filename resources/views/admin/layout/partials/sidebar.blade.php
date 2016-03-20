@@ -18,30 +18,19 @@
             </div>
         @endif
 
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li><a href="{{ route('categories') }}"><i class='fa fa-link'></i> <span>Categorias</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="sidebar-menu nav">
+            <li class="{!! Request::is('admin/categories') ? 'active' : '' !!}"><a href="{{ route('categories') }}"><i class='fa fa-bookmark-o'></i> <span>Categorias</span></a></li>
+            <li class="{!! Request::is('admin/informations') ? 'active' : '' !!}"><a href="{{ route('informations') }}"><i class='fa fa-cubes'></i> <span>Características</span></a></li>
+            <li class="treeview {!! Request::is('admin/vehicles') ? 'active' : '' !!}">
+                <a href="#"><i class='fa fa-motorcycle'></i> <span>Vehículos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li class="{!! Request::is('admin/vehicles/motorbike') ? 'active' : '' !!}"><a href="{{ route('vehicles',['type' => \App\Models\Category::TYPE_MOTORBIKE]) }}">Motos</a></li>
+                    <li class="{!! Request::is('admin/vehicles/bike') ? 'active' : '' !!}"><a href="{{ route('vehicles',['type' => \App\Models\Category::TYPE_BIKE]) }}">Bicicletas</a></li>
+                    <li class="{!! Request::is('admin/vehicles/mobility') ? 'active' : '' !!}"><a href="{{ route('vehicles',['type' => \App\Models\Category::TYPE_MOBILITY]) }}">Movilidad reducida</a></li>
                 </ul>
             </li>
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

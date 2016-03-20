@@ -18,23 +18,30 @@ class CategoryController extends Controller
 
     public function index(Request $request )
     {
-        return view('admin.category.index', ['categories' => $this->categoryRepository->getList()]);
+        return view('admin.category.index', [
+            'motorbikes' => $this->categoryRepository->getList(Category::TYPE_MOTORBIKE),
+            'bicicles' => $this->categoryRepository->getList(Category::TYPE_BIKE),
+            'mobility' => $this->categoryRepository->getList(Category::TYPE_MOBILITY),
+        ]);
     }
 
     public function create(Request $request)
     {
-        if($request->has('name') && $request->has('type')){
-            Category::create($request->all());
-            return back()->with('msg' , 'Categoría creada!');
-        }
-        return back()->with('msg' , 'Error, faltan datos');
+        $this->validate($request, [
+            'type' => 'required',
+            'name.es' => 'required',
+            'name.en' => 'required',
+            'name.de' => 'required',
+        ]);
+
+        $this->categoryRepository->create($request->all());
+        return back();
     }
 
     public function delete($id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
-        return back()->with('msg' , 'Categoría eliminada');
+        $this->categoryRepository->delete($id);
+        return back();
     }
 
 

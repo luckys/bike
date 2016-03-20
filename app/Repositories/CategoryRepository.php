@@ -13,11 +13,22 @@ class CategoryRepository
         $this->category = $category;
     }
 
-    public function getList($type = null,$category = null)
+    public function getList($type = null)
     {
         if($type){
             return $this->category->type($type)->get();
         }
         return $this->category->get();
+    }
+    
+    public function create($fields)
+    {
+        Category::create($fields);
+    }
+    
+    public function delete($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
     }
 }

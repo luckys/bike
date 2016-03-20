@@ -13,8 +13,10 @@ class Category extends Model
     const TYPE_BIKE = 'bike';
     const TYPE_MOBILITY = 'mobility';
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     protected $fillable = ['name', 'type'];
+    protected $casts = ['name' => 'array'];
+
 
     public function  scopeType($query , $type){
         return $query->where('type',$type);

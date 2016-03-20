@@ -15,11 +15,8 @@ class CreateInformationsTable extends Migration
         Schema::create('informations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->tinyInteger('type')->nullable();
-            $table->tinyInteger('fieldtype');
-            $table->string('en');
-            $table->string('de');
-            $table->string('es');
+            $table->string('type')->nullable();
+            $table->string('fieldtype');
             $table->timestamps();
             $table->softDeletes();
         });

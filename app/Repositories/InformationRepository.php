@@ -13,8 +13,19 @@ class InformationRepository
         $this->information = $information;
     }
 
-    public function all()
+    public function getList($type = null)
     {
-        return $this->information->all();
+        return $this->information->type($type)->get();
+    }
+
+    public function create($fields)
+    {
+        Information::create($fields);
+    }
+
+    public function delete($id)
+    {
+        $category = Information::findOrFail($id);
+        $category->delete();
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('auth.layout.auth')
 
 @section('htmlheader_title')
     Register
@@ -67,7 +67,7 @@
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 
-    @include('layouts.partials.scripts_auth')
+    @include('auth.layout.partials.scripts_auth')
 
     <script>
         $(function () {

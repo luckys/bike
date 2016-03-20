@@ -21,7 +21,7 @@ class VehicleRepository
 
     public function getList($type = null, $category = null)
     {
-        $vehicle = $this->vehicle->with('informations', 'attachments','category')->first();
+        $vehicle = $this->vehicle->with('informations', 'attachments','category');
 
         if ($category) {
             $vehicle = $vehicle->category($category);
