@@ -3,10 +3,10 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<html lang="es">
 
 @section('htmlheader')
-    @include('layouts.partials.htmlheader')
+    @include('admin.layout.partials.htmlheader')
 @show
 
 <!--
@@ -32,14 +32,14 @@ desired effect
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
 
-    @include('layouts.partials.mainheader')
+    @include('admin.layout.partials.mainheader')
 
-    @include('layouts.partials.sidebar')
+    @include('admin.layout.partials.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('layouts.partials.contentheader')
+        @include('admin.layout.partials.contentheader')
 
         <!-- Main content -->
         <section class="content">
@@ -48,14 +48,14 @@ desired effect
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
-    @include('layouts.partials.controlsidebar')
+    @include('admin.layout.partials.controlsidebar')
 
-    @include('layouts.partials.footer')
+    @include('admin.layout.partials.footer')
 
 </div><!-- ./wrapper -->
 
 @section('scripts')
-    @include('layouts.partials.scripts')
+    @include('admin.layout.partials.scripts')
 @show
 
 </body>

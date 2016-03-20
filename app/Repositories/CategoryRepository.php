@@ -13,7 +13,7 @@ class CategoryRepository
         $this->category = $category;
     }
 
-    public function all($type = null)
+    public function getList($type = null,$category = null)
     {
         if($type){
             return $this->category->type($type)->get();

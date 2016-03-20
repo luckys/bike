@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layout.main')
 
 @section('htmlheader_title')
 	Home

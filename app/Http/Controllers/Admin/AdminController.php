@@ -5,27 +5,18 @@
  * https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
 /**
- * Class HomeController
+ * Class AdminController
  * @package App\Http\Controllers
  */
-class HomeController extends Controller
+class AdminController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -33,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('admin.index');
     }
 }

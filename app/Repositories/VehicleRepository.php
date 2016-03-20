@@ -19,7 +19,7 @@ class VehicleRepository
         return $this->vehicle->with('informations', 'attachments')->firstOrFail($id);
     }
 
-    public function all($type, $category)
+    public function getList($type = null, $category = null)
     {
         $vehicle = $this->vehicle->with('informations', 'attachments','category')->first();
 

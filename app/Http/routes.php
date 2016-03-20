@@ -1,32 +1,22 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-
 Route::group(['middleware' => 'web'], function () {
+    // Front-end area
     Route::auth();
-
-    Route::group(['prefix' => 'admin'], function(){
-        Route::get('/category', 'Admin\CategoryController@index');
-        Route::get('/', 'HomeController@index');
-    });
-
     Route::get('/', function () {
-        return view('welcome');
+        return view('frontend.home.index');
     });
-
+    
     Route::group(['prefix' => 'vehicles'], function () {
         Route::get('/{type}/{category?}', 'VehicleController@index');
         Route::get('/show/{id}', 'VehicleController@show');
     });
 
+    //Admin area
+    Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
+        Route::get('/', 'Admin\AdminController@index');
+        Route::get('/categories', ['as' =>'categories', 'uses' => 'Admin\CategoryController@index']);
+        Route::post('/categories', ['as' =>'categories.create', 'uses' => 'Admin\CategoryController@create']);
+        Route::delete('/categories/{id}', ['as' =>'categories.delete', 'uses' => 'Admin\CategoryController@delete']);
+    });
 });

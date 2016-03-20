@@ -20,10 +20,10 @@ class VehicleController extends Controller
     public function index(Request $request, $type, $category = null)
     {
         $view = '_list';
-        $data = ['vehicles' => $this->vehicleRepository->all($type,$category)];
+        $data = ['vehicles' => $this->vehicleRepository->getList($type,$category)];
         if (!$request->ajax()) {
             $view = 'index';
-            $data['categories'] = $this->categoryRepository->all($type,$category);
+            $data['categories'] = $this->categoryRepository->getList($type);
         }
         return view('frontend.vehicle.list.' . $view, $data);
     }
