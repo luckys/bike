@@ -12,7 +12,6 @@ class Information extends Model
 
     const FIELDTYPE_INPUT = "input";
     const FIELDTYPE_CHECKBOX = "checkbox";
-    const FIELDTYPE_IMAGE = "image";
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     protected $fillable = ['name', 'type' , 'fieldtype'];

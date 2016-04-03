@@ -24,7 +24,7 @@ class CategoryController extends Controller
             'mobility' => $this->categoryRepository->getList(Category::TYPE_MOBILITY),
         ]);
     }
-
+    
     public function create(Request $request)
     {
         $this->validate($request, [
@@ -43,6 +43,5 @@ class CategoryController extends Controller
         $this->categoryRepository->delete($id);
         return back();
     }
-
-
+    
 }

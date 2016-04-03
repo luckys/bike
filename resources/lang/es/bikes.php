@@ -2,6 +2,8 @@
 
 return [
 
-    'test' => 'Test in spanish',
+    'motorbike' => 'Motos',
+    'bike' => 'Bicicletas',
+    'mobility' => 'Movilidad',
 
 ];

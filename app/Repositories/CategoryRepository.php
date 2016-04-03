@@ -12,7 +12,7 @@ class CategoryRepository
     {
         $this->category = $category;
     }
-
+    
     public function getList($type = null)
     {
         if($type){

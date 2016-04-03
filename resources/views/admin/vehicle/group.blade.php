@@ -1,5 +1,5 @@
 @if(count($items))
-    <div class="col-md-4">
+    <div class="col-md-12">
         <div class="box box-solid box-{{$class}}">
             <div class="box-header">
                 <h2 class="box-title">{{$title}}</h2>
@@ -10,6 +10,10 @@
                         <th>Español</th>
                         <th>Inglés</th>
                         <th>Alemán</th>
+                        <th>Categoría</th>
+                        <th>Precio 1 (barato)</th>
+                        <th>Precio 2 (medio)</th>
+                        <th>Precio 3 (caro)</th>
                         <th class="text-right">Acciones</th>
                     </tr>
                     @foreach($items as $item)

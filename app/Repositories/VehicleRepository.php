@@ -16,7 +16,7 @@ class VehicleRepository
 
     public function get($id)
     {
-        return $this->vehicle->with('informations', 'attachments')->firstOrFail($id);
+        return $this->vehicle->with('informations', 'attachments')->find($id);
     }
 
     public function getList($type = null, $category = null)
@@ -30,6 +30,27 @@ class VehicleRepository
         }
 
         return $vehicle->get();
+    }
+
+    public function create($fields)
+    {
+        return Vehicle::create($fields);
+    }
+
+    public function update($id, $fields)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        $vehicle->category_id = $fields['category_id'];
+        $vehicle->name = $fields['name'];
+        $vehicle->prices = $fields['prices'];
+        $vehicle->save();
+        return $vehicle;
+    }
+
+    public function delete($id)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        $vehicle->delete();
     }
 
 }

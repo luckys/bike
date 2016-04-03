@@ -22,7 +22,7 @@
         <ul class="sidebar-menu nav">
             <li class="{!! Request::is('admin/categories') ? 'active' : '' !!}"><a href="{{ route('categories') }}"><i class='fa fa-bookmark-o'></i> <span>Categorias</span></a></li>
             <li class="{!! Request::is('admin/informations') ? 'active' : '' !!}"><a href="{{ route('informations') }}"><i class='fa fa-cubes'></i> <span>Características</span></a></li>
-            <li class="treeview {!! Request::is('admin/vehicles') ? 'active' : '' !!}">
+            <li class="treeview {!! Request::is('admin/vehicles/*') ? 'active' : '' !!}">
                 <a href="#"><i class='fa fa-motorcycle'></i> <span>Vehículos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li class="{!! Request::is('admin/vehicles/motorbike') ? 'active' : '' !!}"><a href="{{ route('vehicles',['type' => \App\Models\Category::TYPE_MOTORBIKE]) }}">Motos</a></li>

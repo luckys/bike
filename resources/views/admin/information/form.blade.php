@@ -16,7 +16,6 @@
                     <select name="fieldtype" class="form-control" id="fieldtype">
                         <option value="{{\App\Models\Information::FIELDTYPE_CHECKBOX}}">Checkbox</option>
                         <option value="{{\App\Models\Information::FIELDTYPE_INPUT}}">Input</option>
-                        <option value="{{\App\Models\Information::FIELDTYPE_IMAGE}}">Imagen</option>
                     </select>
                 </fieldset>
 
