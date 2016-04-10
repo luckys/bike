@@ -53,4 +53,9 @@ class VehicleRepository
         $vehicle->delete();
     }
 
+    public function addInformation($id, $fields)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        $vehicle->informations()->attach($fields['information_id'], ['value' => json_encode($fields['value'])]);
+    }
 }

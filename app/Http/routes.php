@@ -21,6 +21,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::put('/vehicles/{id}', ['as' =>'vehicles.update', 'uses' => 'Admin\VehicleController@update']);
         Route::delete('/vehicles/{id}', ['as' =>'vehicles.delete', 'uses' => 'Admin\VehicleController@delete']);
         Route::get('/vehicles/edit/{id}', ['as' =>'vehicles.edit', 'uses' => 'Admin\VehicleController@edit']);
+        Route::post('/vehicles/addinformation/{id}', ['as' =>'vehicles.addinformation', 'uses' => 'Admin\VehicleController@addInformation']);
 
         Route::get('/categories', ['as' =>'categories', 'uses' => 'Admin\CategoryController@index']);
         Route::post('/categories', ['as' =>'categories.create', 'uses' => 'Admin\CategoryController@create']);

@@ -16,7 +16,7 @@ class Vehicle extends Model
     //Relations
     public function informations()
     {
-        return $this->belongsToMany('App\Models\Information');
+        return $this->belongsToMany('App\Models\Information')->withPivot('value');
     }
 
     public function attachments()

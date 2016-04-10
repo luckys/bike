@@ -9,20 +9,18 @@
 
 @section('main-content')
 
-    {{ Form::open(array('route' => ['vehicles.update',$vehicle->id], 'method' => 'put')) }}
-    @include('elements.translation_input_name' ,['item' => $vehicle])
+    @include('admin.vehicle.edit.informationform')
 
-    <fieldset class="form-group">
-        <label for="type">Categoría</label>
-        <select name="category_id" class="form-control" id="category">
-            @foreach($categories as $category)
-                <option value="{{$category->id}}">{{$category->name['es']}}</option>
-            @endforeach
-        </select>
-    </fieldset>
+    <div class="col-md-3">
+        @include('admin.vehicle.edit.form')
+    </div>
 
-    @include('admin.vehicle._prices_input')
+    <div class="col-md-7">
+        @include('admin.vehicle.edit.vehicle_informations')
+    </div>
 
-    <button type="submit" class="btn btn-primary pull-right">Actualizar</button>
-    {{ Form::close() }}
+    <div class="col-md-2">
+        @include('admin.vehicle.edit.informations')
+    </div>
+
 @endsection
