@@ -17,8 +17,8 @@
                 </div>
 
                 <div id="information_checkbox_field">
-                    <label class="col-md-6" id="information_checkbox_text"></label>
-                    <input class="col-md-6" type="checkbox" name="checkbox_value" value="1"
+                    <label class="col-lg-6" id="information_checkbox_text"></label>
+                    <input class="col-lg-6" type="checkbox" name="checkbox_value" value="1"
                            data-on-text="Sí" data-off-text="No">
                 </div>
             </div>

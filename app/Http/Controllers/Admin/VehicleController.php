@@ -34,14 +34,20 @@ class VehicleController extends Controller
 
     public function create(Request $request)
     {
+        $name = $request->get('name');
+        $request->merge(['name' => [
+            'es' => $name['es'],
+            'en' => empty($name['en']) ? $name['es'] : $name['en'],
+            'de' => empty($name['de']) ? $name['es'] : $name['de']
+        ]]);
         $this->validate($request, [
             'category_id' => 'required',
-            'name.es' => 'required',
-            'name.en' => 'required',
-            'name.de' => 'required',
             'prices.1' => 'required',
             'prices.2' => 'required',
             'prices.3' => 'required',
+            'name.es' => 'required',
+            'name.en' => 'required',
+            'name.de' => 'required',
         ]);
 
         $vehicle = $this->vehicleRepository->create($request->all());
@@ -103,4 +109,9 @@ class VehicleController extends Controller
         return Redirect::route('vehicles.edit',$id);
     }
 
+    public function removeInformation($vehicleid, $id)
+    {
+        $this->vehicleRepository->removeInformation($vehicleid, $id);
+        return Redirect::route('vehicles.edit',$vehicleid);
+    }
 }

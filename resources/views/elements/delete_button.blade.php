@@ -1,3 +1,3 @@
-{{ Form::open(['method' => 'DELETE', 'route' => [$route, $id]]) }}
-{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+{{ Form::open(['method' => 'DELETE', 'route' => $route]) }}
+    <span class="glyphicon glyphicon-trash" role="button"></span>
 {{ Form::close() }}

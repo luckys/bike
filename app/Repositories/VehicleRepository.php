@@ -58,4 +58,10 @@ class VehicleRepository
         $vehicle = Vehicle::findOrFail($id);
         $vehicle->informations()->attach($fields['information_id'], ['value' => json_encode($fields['value'])]);
     }
+
+    public function removeInformation($vehicleid, $id)
+    {
+        $vehicle = Vehicle::findOrFail($vehicleid);
+        $vehicle->informations()->detach($id);
+    }
 }
