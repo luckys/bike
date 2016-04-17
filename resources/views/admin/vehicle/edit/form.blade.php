@@ -1,5 +1,4 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">Información principal</div>
     <div class="panel-body">
         {{ Form::open(array('route' => ['vehicles.update',$vehicle->id], 'method' => 'put')) }}
 

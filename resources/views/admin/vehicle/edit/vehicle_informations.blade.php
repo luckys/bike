@@ -1,5 +1,5 @@
 @foreach($vehicleInformations as $vehicleInformation)
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
         <div class="panel-heading">{{$vehicleInformation->name['es']. " / ". $vehicleInformation->name['en'] ." / ".
             $vehicleInformation->name['de']}}
             <div class="pull-right">

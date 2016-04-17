@@ -12,7 +12,7 @@
     @include('admin.vehicle.edit.informationform')
 
     <div class="col-lg-10">
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading">{{$vehicle->name['es']}}</div>
             <div class="panel-body">
                 <div class="col-lg-4">
