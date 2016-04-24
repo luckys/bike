@@ -17,6 +17,7 @@ class CreateInformationVehicleTable extends Migration
             $table->integer('information_id')->unsigned();
             $table->integer('vehicle_id')->unsigned();
             $table->string('value');
+            $table->integer('position');
             $table->foreign('information_id')->references('id')->on('informations');
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
         });

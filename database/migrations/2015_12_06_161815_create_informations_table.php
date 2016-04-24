@@ -17,6 +17,7 @@ class CreateInformationsTable extends Migration
             $table->string('name');
             $table->string('type')->nullable();
             $table->string('fieldtype');
+            $table->integer('position');
             $table->timestamps();
             $table->softDeletes();
         });
