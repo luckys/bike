@@ -28,7 +28,11 @@ class CategoryRepository
     
     public function delete($id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        $category = Category::with('vehicles')->findOrFail($id);
+        if($category->vehicles->isEmpty()){
+            $category->delete();
+            return true;
+        }
+        return false;
     }
 }

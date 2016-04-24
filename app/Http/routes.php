@@ -27,10 +27,12 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/categories', ['as' =>'categories', 'uses' => 'Admin\CategoryController@index']);
         Route::post('/categories', ['as' =>'categories.create', 'uses' => 'Admin\CategoryController@create']);
         Route::delete('/categories/{id}', ['as' =>'categories.delete', 'uses' => 'Admin\CategoryController@delete']);
+        Route::put('/categories/{id}', ['as' =>'categories.update', 'uses' => 'Admin\CategoryController@update']);
 
         Route::get('/informations', ['as' =>'informations', 'uses' => 'Admin\InformationController@index']);
         Route::post('/informations', ['as' =>'informations.create', 'uses' => 'Admin\InformationController@create']);
         Route::delete('/informations/{id}', ['as' =>'informations.delete', 'uses' => 'Admin\InformationController@delete']);
+        Route::put('/informations', ['as' =>'informations.update', 'uses' => 'Admin\InformationController@update']);
 
 
     });

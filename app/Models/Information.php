@@ -17,6 +17,12 @@ class Information extends Model
     protected $fillable = ['name', 'type' , 'fieldtype'];
     protected $casts = ['name' => 'array'];
 
+    //Relations
+    public function vehicles()
+    {
+        return $this->belongsToMany('App\Models\Vehicle')->withPivot('value');
+    }
+
     public function scopeType($query, $type)
     {
         return $query->whereIn('type', [$type, '']);

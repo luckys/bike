@@ -25,7 +25,12 @@ class InformationRepository
 
     public function delete($id)
     {
-        $category = Information::findOrFail($id);
-        $category->delete();
+        $information = Information::findOrFail($id);
+        if($information->vehicles->isEmpty())
+        {
+            $information->delete();
+            return true;
+        }
+        return false;
     }
 }

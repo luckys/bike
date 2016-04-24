@@ -17,6 +17,10 @@ class Category extends Model
     protected $fillable = ['name', 'type'];
     protected $casts = ['name' => 'array'];
 
+    public function vehicles()
+    {
+        return $this->hasMany('App\Models\Vehicle');
+    }
 
     public function  scopeType($query , $type){
         return $query->where('type',$type);

@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function index(Request $request )
+    public function index()
     {
         return view('admin.category.index', [
             'motorbikes' => $this->categoryRepository->getList(Category::TYPE_MOTORBIKE),
@@ -27,6 +27,7 @@ class CategoryController extends Controller
     
     public function create(Request $request)
     {
+        $this->setDefaultNameValue($request);
         $this->validate($request, [
             'type' => 'required',
             'name.es' => 'required',
@@ -40,8 +41,15 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        $this->categoryRepository->delete($id);
+        if(!$this->categoryRepository->delete($id))
+        {
+            return back()->withErrors(['Error' => 'Hay vehículos con esta categoría, imposible eliminar']);
+        };
         return back();
     }
     
+    public function update(Request $request)
+    {
+        
+    }
 }

@@ -23,7 +23,7 @@ class VehicleController extends Controller
         $this->informationRepository = $informationRepository;
     }
 
-    public function index(Request $request, $type)
+    public function index($type)
     {
         return view('admin.vehicle.index', [
             'vehicles' => $this->vehicleRepository->getList($type),
@@ -34,12 +34,7 @@ class VehicleController extends Controller
 
     public function create(Request $request)
     {
-        $name = $request->get('name');
-        $request->merge(['name' => [
-            'es' => $name['es'],
-            'en' => empty($name['en']) ? $name['es'] : $name['en'],
-            'de' => empty($name['de']) ? $name['es'] : $name['de']
-        ]]);
+        $this->setDefaultNameValue($request);
         $this->validate($request, [
             'category_id' => 'required',
             'prices.1' => 'required',
@@ -49,7 +44,6 @@ class VehicleController extends Controller
             'name.en' => 'required',
             'name.de' => 'required',
         ]);
-
         $vehicle = $this->vehicleRepository->create($request->all());
         return Redirect::route('vehicles.edit',$vehicle->id);
     }
@@ -77,8 +71,8 @@ class VehicleController extends Controller
             'prices.2' => 'required',
             'prices.3' => 'required',
         ]);
-        $vehicle = $this->vehicleRepository->update($id,$request->all());
-        return Redirect::route('vehicles',$vehicle->typeName);
+        $this->vehicleRepository->update($id,$request->all());
+        return Redirect::route('vehicles.edit',$id);
     }
 
     public function delete($id)
