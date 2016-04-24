@@ -35,4 +35,11 @@ class CategoryRepository
         }
         return false;
     }
+    
+    public function update($id,$name)
+    {
+        $category = Category::findOrFail($id);
+        $category->name = $name;
+        $category->save();
+    }
 }
