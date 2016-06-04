@@ -47,10 +47,16 @@ class InformationController extends Controller
         };
         return back();
     }
-    
-    public function update(Request $request)
-    {
 
+    public function update(Request $request,$id)
+    {
+        $this->validate($request, [
+            'name.es' => 'required',
+            'name.en' => 'required',
+            'name.de' => 'required',
+        ]);
+        $this->informationRepository->update($id, $request->get('name'));
+        return back();
     }
 
 }

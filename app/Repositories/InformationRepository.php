@@ -33,4 +33,11 @@ class InformationRepository
         }
         return false;
     }
+
+    public function update($id,$name)
+    {
+        $information = Information::findOrFail($id);
+        $information->name = $name;
+        $information->save();
+    }
 }

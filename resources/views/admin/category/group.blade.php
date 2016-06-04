@@ -9,7 +9,7 @@
                     <div class="col-lg-3 text-center"><strong>Español</strong></div>
                     <div class="col-lg-3 text-center"><strong>Inglés</strong></div>
                     <div class="col-lg-3 text-center"><strong>Alemán</strong></div>
-                    <div class="col-lg-3 text-center"></div>
+                    <div class="col-lg-3 text-center"><strong>Acciones</strong></div>
                 </div>
                 @foreach($items as $item)
                     <div class="row margin-bottom">

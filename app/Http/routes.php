@@ -32,7 +32,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/informations', ['as' =>'informations', 'uses' => 'Admin\InformationController@index']);
         Route::post('/informations', ['as' =>'informations.create', 'uses' => 'Admin\InformationController@create']);
         Route::delete('/informations/{id}', ['as' =>'informations.delete', 'uses' => 'Admin\InformationController@delete']);
-        Route::put('/informations', ['as' =>'informations.update', 'uses' => 'Admin\InformationController@update']);
+        Route::put('/informations/{id}', ['as' =>'informations.update', 'uses' => 'Admin\InformationController@update']);
 
 
     });
