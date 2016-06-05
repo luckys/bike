@@ -34,6 +34,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::delete('/informations/{id}', ['as' =>'informations.delete', 'uses' => 'Admin\InformationController@delete']);
         Route::put('/informations/{id}', ['as' =>'informations.update', 'uses' => 'Admin\InformationController@update']);
 
+        Route::post('/attachments', ['as' =>'attachments.create', 'uses' => 'Admin\AttachmentController@create']);
+        Route::delete('/attachments/{id}', ['as' =>'attachments.delete', 'uses' => 'Admin\AttachmentController@delete']);
+
 
     });
 });

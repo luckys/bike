@@ -2,6 +2,7 @@
     <meta charset="UTF-8">
     <title> MotoRent - @yield('htmlheader_title', 'MotoRent') </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap 3.3.4 -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -18,7 +19,11 @@
     <!-- iCheck -->
     <link href="{{ asset('/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/plugins/bootstrap-switch/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset('/plugins/cropper/cropper.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

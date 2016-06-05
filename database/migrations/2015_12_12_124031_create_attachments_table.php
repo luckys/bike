@@ -18,6 +18,7 @@ class CreateAttachmentsTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->integer('type');
+            $table->integer('position');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('vehicle_id')->references('id')->on('vehicles');

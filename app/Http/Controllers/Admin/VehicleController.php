@@ -2,25 +2,33 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Attachment;
 use App\Models\Information;
+use App\Repositories\AttachmentRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\InformationRepository;
 use App\Repositories\VehicleRepository;
 use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
+use Intervention\Image\Facades\Image;
 
 class VehicleController extends Controller
 {
     protected $vehicleRepository;
     protected $categoryRepository;
     protected $informationRepository;
+    protected $attachmentRepository;
 
-    public function __construct(VehicleRepository $vehicleRepository, CategoryRepository $categoryRepository, InformationRepository $informationRepository)
+    public function __construct(VehicleRepository $vehicleRepository,
+                                CategoryRepository $categoryRepository,
+                                InformationRepository $informationRepository,
+                                AttachmentRepository $attachmentRepository)
     {
         $this->vehicleRepository = $vehicleRepository;
         $this->categoryRepository = $categoryRepository;
         $this->informationRepository = $informationRepository;
+        $this->attachmentRepository = $attachmentRepository;
     }
 
     public function index($type)
@@ -48,7 +56,7 @@ class VehicleController extends Controller
         return Redirect::route('vehicles.edit',$vehicle->id);
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $vehicle = $this->vehicleRepository->get($id);
         return view('admin.vehicle.edit', [
@@ -57,6 +65,7 @@ class VehicleController extends Controller
             'informations' => $this->informationRepository->getList($vehicle->typeName),
             'vehicleInformations' => $vehicle->informations()->get(),
             'type' => $vehicle->typeName,
+            'images' => $this->attachmentRepository->getList($id, Attachment::TYPE_IMAGE)
         ]);
     }
 
@@ -107,5 +116,18 @@ class VehicleController extends Controller
     {
         $this->vehicleRepository->removeInformation($vehicleid, $id);
         return Redirect::route('vehicles.edit',$vehicleid);
+    }
+
+    public function uploadImage(Request $request, $id){
+        $data = explode(',', $request->input('base64image'));
+        if(isset($data[1])){
+            $filename = '/vehicle_img/'.$id. '_'. time()  . ".png";
+            Image::make(base64_decode($data[1]))
+                ->resize(config('bike.image-size'),config('bike.image-size'))
+                ->save(public_path() . $filename);
+            $this->attachmentRepository->create($id, $filename, Attachment::TYPE_IMAGE);
+            return $filename;
+        }
+        abort(404);
     }
 }

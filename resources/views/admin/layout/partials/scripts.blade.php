@@ -11,7 +11,6 @@
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
       fixed layout. -->
-
-<script src="{{ asset('/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
-
+<script src="{{ asset('/plugins/bootstrap-switch/bootstrap-switch.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/cropper/cropper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/admin.js') }}" type="text/javascript"></script>

@@ -17,6 +17,7 @@
             <div class="panel-body">
                 <div class="col-lg-4">
                     @include('admin.vehicle.edit.form')
+                    @include('admin.vehicle.edit.gallery')
                 </div>
                 <div class="col-lg-8">
                     @include('admin.vehicle.edit.vehicle_informations')
