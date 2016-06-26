@@ -18,9 +18,7 @@
                 </div>
                 <ul id="sortable_vehicle">
                     @foreach($items as $item)
-                        <li class="ui-state-default" id="sortable_vehicle_id_{{$item->id}}">
-                            @include('admin.vehicle.item')
-                        </li>
+                        @include('admin.vehicle.item')
                     @endforeach
                 </ul>
             </div>

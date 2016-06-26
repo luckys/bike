@@ -65,7 +65,7 @@ class VehicleRepository
 
     public function removeInformation($vehicleid, $id)
     {
-        $vehicle = Vehicle::findOrFail($vehicleid);
+        $vehicle = Vehicle::with('informations')->findOrFail($vehicleid);
         $vehicle->informations()->detach($id);
     }
 
@@ -75,6 +75,14 @@ class VehicleRepository
             $vehicle = Vehicle::findOrFail($id);
             $vehicle->position = $pos;
             $vehicle->save();
+        }
+    }
+
+    public function sortInformations($id, $list)
+    {
+        $vehicle = Vehicle::with('informations')->findOrFail($id);
+        foreach ($list as $pos => $informationid){
+            $vehicle->informations()->updateExistingPivot($informationid,['position' => $pos]);
         }
     }
 }

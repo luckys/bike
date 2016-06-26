@@ -63,7 +63,7 @@ class VehicleController extends Controller
             'vehicle' => $vehicle,
             'categories' => $this->categoryRepository->getList($vehicle->typeName),
             'informations' => $this->informationRepository->getList($vehicle->typeName),
-            'vehicleInformations' => $vehicle->informations()->get(),
+            'vehicleInformations' => $vehicle->informations()->orderBy('pivot_position')->get(),
             'type' => $vehicle->typeName,
             'images' => $this->attachmentRepository->getList($id, Attachment::TYPE_IMAGE)
         ]);
@@ -134,5 +134,10 @@ class VehicleController extends Controller
     public function sort(Request $request)
     {
         $this->vehicleRepository->sort($request->input('sortable_vehicle_id'));
+    }
+
+    public function sortInformations(Request $request, $id)
+    {
+        $this->vehicleRepository->sortInformations($id, $request->input('sortable_vehicle_information_id'));
     }
 }

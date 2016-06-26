@@ -14,9 +14,7 @@
                 </div>
                 <ul id="sortable_information">
                     @foreach($items as $item)
-                        <li class="ui-state-default" id="sortable_information_id_{{$item->id}}">
-                            @include('admin.information.item')
-                        </li>
+                        @include('admin.information.item')
                     @endforeach
                 </ul>
             </div>

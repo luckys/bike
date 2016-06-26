@@ -20,7 +20,7 @@ class Information extends Model
     //Relations
     public function vehicles()
     {
-        return $this->belongsToMany('App\Models\Vehicle')->withPivot('value');
+        return $this->belongsToMany('App\Models\Vehicle')->withPivot('value', 'position');
     }
 
     public function scopeType($query, $type)
