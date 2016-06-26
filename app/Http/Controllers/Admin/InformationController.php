@@ -59,4 +59,9 @@ class InformationController extends Controller
         return back();
     }
 
+    public function sort(Request $request)
+    {
+        $this->informationRepository->sort($request->input('sortable_information_id'));
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Information;
 use App\Models\Vehicle;
 
 class VehicleRepository
@@ -29,7 +30,7 @@ class VehicleRepository
             $vehicle = $vehicle->type($type);
         }
 
-        return $vehicle->get();
+        return $vehicle->orderBy('position')->get();
     }
 
     public function create($fields)
@@ -56,12 +57,24 @@ class VehicleRepository
     public function addInformation($id, $fields)
     {
         $vehicle = Vehicle::findOrFail($id);
-        $vehicle->informations()->attach($fields['information_id'], ['value' => json_encode($fields['value'])]);
+        $information = Information::findOrFail($fields['information_id']);
+        $vehicle->informations()->attach($fields['information_id'], 
+            ['value' => json_encode($fields['value']),
+            'position' => $information->position]);
     }
 
     public function removeInformation($vehicleid, $id)
     {
         $vehicle = Vehicle::findOrFail($vehicleid);
         $vehicle->informations()->detach($id);
+    }
+
+    public function sort($list)
+    {
+        foreach ($list as $pos => $id){
+            $vehicle = Vehicle::findOrFail($id);
+            $vehicle->position = $pos;
+            $vehicle->save();
+        }
     }
 }

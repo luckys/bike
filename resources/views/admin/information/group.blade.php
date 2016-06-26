@@ -12,11 +12,13 @@
                     <div class="col-lg-3 text-center"><strong>Alemán</strong></div>
                     <div class="col-lg-2 text-center"><strong>Acciones</strong></div>
                 </div>
-                @foreach($items as $item)
-                    <div class="row margin-bottom">
-                        @include('admin.information.item')
-                    </div>
-                @endforeach
+                <ul id="sortable_information">
+                    @foreach($items as $item)
+                        <li class="ui-state-default" id="sortable_information_id_{{$item->id}}">
+                            @include('admin.information.item')
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

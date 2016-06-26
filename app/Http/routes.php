@@ -18,6 +18,7 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::get('/vehicles/{type}', ['as' =>'vehicles', 'uses' => 'Admin\VehicleController@index']);
         Route::post('/vehicles', ['as' =>'vehicles.create', 'uses' => 'Admin\VehicleController@create']);
+        Route::put('/vehicles/sort', ['as' =>'vehicles.sort', 'uses' => 'Admin\VehicleController@sort']);
         Route::put('/vehicles/{id}', ['as' =>'vehicles.update', 'uses' => 'Admin\VehicleController@update']);
         Route::delete('/vehicles/{id}', ['as' =>'vehicles.delete', 'uses' => 'Admin\VehicleController@delete']);
         Route::get('/vehicles/edit/{id}', ['as' =>'vehicles.edit', 'uses' => 'Admin\VehicleController@edit']);
@@ -32,7 +33,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/informations', ['as' =>'informations', 'uses' => 'Admin\InformationController@index']);
         Route::post('/informations', ['as' =>'informations.create', 'uses' => 'Admin\InformationController@create']);
         Route::delete('/informations/{id}', ['as' =>'informations.delete', 'uses' => 'Admin\InformationController@delete']);
+        Route::put('/informations/sort', ['as' =>'informations.sort', 'uses' => 'Admin\InformationController@sort']);
         Route::put('/informations/{id}', ['as' =>'informations.update', 'uses' => 'Admin\InformationController@update']);
+
 
         Route::post('/attachments', ['as' =>'attachments.create', 'uses' => 'Admin\AttachmentController@create']);
         Route::delete('/attachments/{id}', ['as' =>'attachments.delete', 'uses' => 'Admin\AttachmentController@delete']);

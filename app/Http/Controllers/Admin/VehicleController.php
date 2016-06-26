@@ -130,4 +130,9 @@ class VehicleController extends Controller
         }
         abort(404);
     }
+
+    public function sort(Request $request)
+    {
+        $this->vehicleRepository->sort($request->input('sortable_vehicle_id'));
+    }
 }

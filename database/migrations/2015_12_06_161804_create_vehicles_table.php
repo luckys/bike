@@ -17,6 +17,7 @@ class CreateVehiclesTable extends Migration
             $table->string('name');
             $table->integer('category_id')->unsigned();
             $table->string('prices');
+            $table->integer('position');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('categories');

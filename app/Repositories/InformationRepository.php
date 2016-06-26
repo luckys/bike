@@ -15,7 +15,7 @@ class InformationRepository
 
     public function getList($type = null)
     {
-        return $this->information->type($type)->get();
+        return $this->information->type($type)->orderBy('position')->get();
     }
 
     public function create($fields)
@@ -39,5 +39,14 @@ class InformationRepository
         $information = Information::findOrFail($id);
         $information->name = $name;
         $information->save();
+    }
+
+    public function sort($list)
+    {
+        foreach ($list as $pos => $id){
+            $information = Information::findOrFail($id);
+            $information->position = $pos;
+            $information->save();
+        }
     }
 }
