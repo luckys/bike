@@ -12,8 +12,29 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
-    mix.less('admin.less');
-    mix.less('admin-lte/AdminLTE.less');
-    mix.less('bootstrap/bootstrap.less');
+    //Frontend
+    mix.less([
+        'theme.less',
+        'app.less'
+    ], 'public/css/app.css');
+    mix.scripts([
+        'libs/bootstrap.js',
+        'libs/smoothscroll.js',
+    ], 'public/js/app.js');
+
+    //Admin
+    mix.less([
+        'libs/bootstrap-less/bootstrap.less',
+        'libs/admin-lte/AdminLTE.less',
+        'libs/admin-lte/skins/skin-blue.less',
+        'admin/admin.less'
+    ], 'public/css/admin.css');
+
+    mix.scripts([
+        'libs/bootstrap.js',
+        'libs/adminLTE.js',
+        'admin/admin.js'
+    ], 'public/js/admin.js');
+
+
 });

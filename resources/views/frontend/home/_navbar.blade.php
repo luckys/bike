@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+            <a class="navbar-brand" href="#"><b>Moto Bike Lanzarote</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -16,14 +16,14 @@
                 <li><a href="#showcase" class="smothScroll">Showcase</a></li>
                 <li><a href="#contact" class="smothScroll">Contact</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            {{--<ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
                     <li><a href="/home">{{ Auth::user()->name }}</a></li>
                 @endif
-            </ul>
+            </ul>--}}
         </div><!--/.nav-collapse -->
     </div>
 </div>
