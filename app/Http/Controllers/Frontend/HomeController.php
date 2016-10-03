@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Category;
 use App\Repositories\CategoryRepository;
 use App\Repositories\VehicleRepository;
 use \Illuminate\Http\Request;
@@ -20,7 +21,10 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        return view('frontend.home.index');
+        $motos = $this->vehicleRepository->getList(Category::TYPE_MOTORBIKE);
+        $bikes = $this->vehicleRepository->getList(Category::TYPE_BIKE);
+        $mobilities = $this->vehicleRepository->getList(Category::TYPE_MOBILITY);
+        return view('frontend.home.index', compact('motos', 'bikes', 'mobilities'));
     }
 
 }
