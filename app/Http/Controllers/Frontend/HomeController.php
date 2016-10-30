@@ -2,29 +2,26 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Category;
 use App\Repositories\CategoryRepository;
-use App\Repositories\VehicleRepository;
+use App\Services\VehicleService;
 use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    protected $vehicleRepository;
+    protected $vehicleService;
     protected $categoryRepository;
 
-    public function __construct(VehicleRepository $vehicleRepository, CategoryRepository $categoryRepository)
+    public function __construct(VehicleService $vehicleService, CategoryRepository $categoryRepository)
     {
-        $this->vehicleRepository = $vehicleRepository;
+        $this->vehicleService = $vehicleService;
         $this->categoryRepository = $categoryRepository;
     }
 
     public function index(Request $request)
     {
-        $motos = $this->vehicleRepository->getList(Category::TYPE_MOTORBIKE);
-        $bikes = $this->vehicleRepository->getList(Category::TYPE_BIKE);
-        $mobilities = $this->vehicleRepository->getList(Category::TYPE_MOBILITY);
-        return view('frontend.home.index', compact('motos', 'bikes', 'mobilities'));
+        $vehicles = $this->vehicleService->getAll();
+        return view('frontend.home.index', compact('vehicles'));
     }
 
 }

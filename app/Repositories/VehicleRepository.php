@@ -26,7 +26,7 @@ class VehicleRepository
 
         if ($category) {
             $vehicle = $vehicle->category($category);
-        }else{
+        }else if($type){
             $vehicle = $vehicle->type($type);
         }
 

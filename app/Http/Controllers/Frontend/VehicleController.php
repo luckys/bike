@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Repositories\CategoryRepository;
 use App\Repositories\VehicleRepository;
 use \Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class VehicleController extends Controller
 {

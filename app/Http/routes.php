@@ -1,19 +1,26 @@
 <?php
+use App\Http\Middleware\Language;
 
 Route::group(['middleware' => 'web'], function () {
+
+    //Auth
+    Route::get('login', ['as' => 'show_login', 'uses' => 'Auth\AuthController@showLoginForm']);
+    Route::post('login', ['as' => 'login', 'uses' => 'Auth\AuthController@login']);
+    Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
+
+
     // Front-end area
-    Route::auth();
-    Route::group(['namespace' => 'Frontend'], function () {
+    Route::group(['namespace' => 'Frontend', 'middleware' => Language::class], function () {
         Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
         Route::group(['prefix' => 'vehicles'], function () {
-            Route::get('/{type}/{category?}', 'VehicleController@index');
-            Route::get('/show/{id}', 'VehicleController@show');
+            Route::get('/{type}/{category?}', ['as' => 'vehicles.list', 'uses' => 'VehicleController@index']);
+            Route::get('/show/{id}', ['as' => 'vehicles.show', 'uses' => 'VehicleController@show']);
         });
     });
 
     //Admin area
     Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function () {
-        Route::get('/', 'CategoryController@index');
+        Route::get('/', ['as' => 'admin', 'uses' => 'CategoryController@index']);
 
         Route::get('/vehicles/{type}', ['as' => 'vehicles', 'uses' => 'VehicleController@index']);
         Route::post('/vehicles', ['as' => 'vehicles.create', 'uses' => 'VehicleController@create']);
@@ -40,7 +47,6 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::post('/attachments', ['as' => 'attachments.create', 'uses' => 'AttachmentController@create']);
         Route::delete('/attachments/{id}', ['as' => 'attachments.delete', 'uses' => 'AttachmentController@delete']);
-
-
     });
+
 });

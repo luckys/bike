@@ -38,16 +38,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router, Request $request)
     {
-       /* $locale = $request->segment(1);
-        $this->app->setLocale($locale);
+        $locale  = array_key_exists($request->segment(1), $this->app->config->get('app.locales')) ? $request->segment(1) : null;
 
         $this->app->booted(function () use ($router, $locale) {
             $router->group(['namespace' => $this->namespace, 'prefix' => $locale], function ($router) {
-                require app_path('Http/routes.php');
-            });
-        });*/
-        $this->app->booted(function () use ($router) {
-            $router->group(['namespace' => $this->namespace], function ($router) {
                 require app_path('Http/routes.php');
             });
         });

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('frontend.layout.main')
 
 @section('htmlheader_title')
     Service unavailable
