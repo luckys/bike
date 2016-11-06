@@ -31,6 +31,7 @@ class VehicleService
             'prices' => $vehicleItem->prices,
             'type' => $vehicleItem->category->type,
             'category' => $vehicleItem->category->name,
+            'category_id' => $vehicleItem->category->id,
             'informations' => $this->informations($vehicleItem->informations),
             'attachments' => $vehicleItem->attachments->toArray(),
         ];

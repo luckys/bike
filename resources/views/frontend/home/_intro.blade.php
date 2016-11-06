@@ -3,7 +3,7 @@
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <h1>Designed To Excel</h1>
+            <h1>About MotoRentLanzarote</h1>
             <br>
             <br>
             <div class="col-lg-4">
@@ -25,6 +25,5 @@
             </div>
         </div>
         <br>
-        <hr>
     </div> <!--/ .container -->
 </div><!--/ #introwrap -->

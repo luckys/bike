@@ -4,32 +4,23 @@
         <div class="col-lg-5">
             <h3>Address</h3>
             <p>
-                Av. Greenville 987,<br/>
-                New York,<br/>
-                90873<br/>
-                United States
+                Av. Archipiélago 7, local 2, Centro Comercial Lanzarote Park<br/>
+                35580 Playa Blanca<br/>
+                Lanzarote<br/>
+                Las Palmas<br/>
+                España<br/>
             </p>
-        </div>
+             </div>
 
         <div class="col-lg-7">
-            <h3>Drop Us A Line</h3>
-            <br>
-            <form role="form" action="#" method="post" enctype="plain">
-                <div class="form-group">
-                    <label for="name1">Your Name</label>
-                    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+            <div style="height:500px;width:500px;max-width:100%;list-style:none; transition: none;overflow:hidden;">
+                <div id="gmap-display" style="height:100%; width:100%;max-width:100%;">
+                    <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=MotoBike+Lanzarote,+Playa+Blanca,+España&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
                 </div>
-                <div class="form-group">
-                    <label for="email1">Email address</label>
-                    <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label>Your Text</label>
-                    <textarea class="form-control" name="Message" rows="3"></textarea>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
-            </form>
+                <a class="google-map-code" rel="nofollow" href="https://www.interserver-coupons.com" id="authorize-maps-data">https://www.interserver-coupons.com</a>
+                <style>#gmap-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+            </div>
+            <script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=4589fb27-79df-2d41-fe6b-0f50f4c00517&c=google-map-code&u=1478472355" defer="defer" async="async"></script>
         </div>
     </div>
 </div>

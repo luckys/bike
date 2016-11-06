@@ -6,6 +6,7 @@ use App\Repositories\CategoryRepository;
 use App\Services\VehicleService;
 use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 
 class VehicleController extends Controller
 {
@@ -20,8 +21,17 @@ class VehicleController extends Controller
 
     public function index(Request $request, $type)
     {
-        $vehicles = $this->vehicleService->getType($type);
-        return view('frontend.vehicle.index', compact('vehicles'));
+        $categories = $this->categoryRepository->getList($type);
+        $vehicleList = $this->vehicleService->getType($type);
+        $vehicles = [];
+        foreach ($vehicleList as $vehicle){
+            if(!isset($vehicles[$vehicle['category_id']])){
+                $vehicles[$vehicle['category_id']] = [];
+            }
+            $vehicles[$vehicle['category_id']][] = $vehicle;
+        }
+        $lang = App::getLocale();
+        return view('frontend.vehicle.index', compact('vehicles', 'categories', 'lang'));
     }
 
     public function show($id){

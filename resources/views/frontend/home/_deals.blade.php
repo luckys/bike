@@ -2,7 +2,7 @@
 <div id="showcase">
     <div class="container">
         <div class="row">
-            <h1 class="centered">Some Screenshots</h1>
+            <h1 class="centered">Current deals</h1>
             <br>
             <div class="col-lg-8 col-lg-offset-2">
                 <div id="carousel-example-generic" class="carousel slide">
