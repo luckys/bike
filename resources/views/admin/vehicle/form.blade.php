@@ -9,7 +9,7 @@
             <div class="modal-body">
                 {{ Form::open(array('route' => 'vehicles.create')) }}
                 <input type="hidden" value="{{$type}}">
-                @include('elements.translation_input_name')
+                @include('admin.elements.translation_input_name')
 
                 <fieldset class="form-group">
                     <label for="type">Categoría</label>

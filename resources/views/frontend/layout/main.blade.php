@@ -13,14 +13,12 @@
     <script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
-
-@yield('content')
-
-<script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
-<script>
-    $('.carousel').carousel({
-        interval: 3500
-    })
-</script>
+    @include('frontend.layout._navbar')
+    @yield('content')
+    @include('frontend.layout._contact')
+    @include('frontend.layout._footer')
+    <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
 </body>
 </html>
+
+

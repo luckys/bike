@@ -9,7 +9,7 @@
             <div class="modal-body">
                 {{ Form::open(array('route' => 'informations.create')) }}
 
-                @include('elements.vehicle_type_select',['default' => true])
+                @include('admin.elements.vehicle_type_select',['default' => true])
 
                 <fieldset class="form-group">
                     <label for="fieldtype">Formato</label>
@@ -19,7 +19,7 @@
                     </select>
                 </fieldset>
 
-                @include('elements.translation_input_name')
+                @include('admin.elements.translation_input_name')
 
             </div>
             <div class="modal-footer">

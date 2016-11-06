@@ -2,7 +2,7 @@
     <div class="panel-body">
         {{ Form::open(array('route' => ['vehicles.update',$vehicle->id], 'method' => 'put')) }}
 
-            @include('elements.translation_input_name' ,['item' => $vehicle])
+            @include('admin.elements.translation_input_name' ,['item' => $vehicle])
 
             <fieldset class="form-group">
                 <label for="type">Categoría</label>

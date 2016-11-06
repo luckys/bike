@@ -3,35 +3,30 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Repositories\CategoryRepository;
-use App\Repositories\VehicleRepository;
+use App\Services\VehicleService;
 use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class VehicleController extends Controller
 {
-    protected $vehicleRepository;
+    protected $vehicleService;
     protected $categoryRepository;
 
-    public function __construct(VehicleRepository $vehicleRepository, CategoryRepository $categoryRepository)
+    public function __construct(VehicleService $vehicleService, CategoryRepository $categoryRepository)
     {
-        $this->vehicleRepository = $vehicleRepository;
+        $this->vehicleService = $vehicleService;
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function index(Request $request, $type, $category = null)
+    public function index(Request $request, $type)
     {
-        $view = '_list';
-        $data = ['vehicles' => $this->vehicleRepository->getList($type,$category)];
-        if (!$request->ajax()) {
-            $view = 'index';
-            $data['categories'] = $this->categoryRepository->getList($type);
-        }
-        return view('frontend.vehicle.list.' . $view, $data);
+        $vehicles = $this->vehicleService->getType($type);
+        return view('frontend.vehicle.index', compact('vehicles'));
     }
 
     public function show($id){
         return view('frontend.vehicle.show.index', [
-                'vehicle' => $this->vehicleRepository->get($id)
+                'vehicle' => $this->vehicleService->get($id)
             ]
         );
     }

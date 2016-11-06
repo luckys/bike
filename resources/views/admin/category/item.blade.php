@@ -17,7 +17,7 @@
 {{ Form::close() }}
 
 <div class="col-lg-1">
-    @include('elements.delete_button',['route' => ['categories.delete', $item->id]])
+    @include('admin.elements.delete_button',['route' => ['categories.delete', $item->id]])
 </div>
 
 

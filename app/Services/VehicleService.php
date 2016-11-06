@@ -14,10 +14,10 @@ class VehicleService
         $this->vehicleRepository = $vehicleRepository;
     }
 
-    public function getAll()
+    public function getType($type)
     {
         $vehicles = [];
-        foreach($this->vehicleRepository->getList() as $vehicleItem){
+        foreach($this->vehicleRepository->getList($type) as $vehicleItem){
             $vehicles[] = $this->DTO($vehicleItem);
         }
 

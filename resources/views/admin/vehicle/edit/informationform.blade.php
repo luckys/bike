@@ -13,7 +13,7 @@
                 <input  name="fieldtype" type="hidden" value="">
 
                 <div id="information_input_field">
-                    @include('elements.translation_input_name')
+                    @include('admin.elements.translation_input_name')
                 </div>
 
                 <div id="information_checkbox_field">

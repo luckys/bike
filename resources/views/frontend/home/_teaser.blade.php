@@ -1,33 +1,26 @@
-<section id="home" name="home"></section>
-<div id="headerwrap">
+<div id="teaser" >
     <div class="container">
         <div class="row centered">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-                <div id='vehicle_selector_widget' class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Motorcicles</a></li>
-                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Bikecicles</a></li>
-                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">RMV</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane" id="tab_1">
-                            @include('frontend.home._vehicle_list', ['type' => 'motorbike'])
-                        </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane" id="tab_2">
-                            @include('frontend.home._vehicle_list', ['type' => 'bike'])
-                        </div>
-                        <!-- /.tab-pane -->
-                        <div class="tab-pane active" id="tab_3">
-                            @include('frontend.home._vehicle_list', ['type' => 'mobility'])
-                        </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div>
+            <div class="col-lg-12">
+                <h1>Welcome To <b>Pratt</b></h1>
+                <h3>Show your product with this handsome theme.</h3>
+                <br>
             </div>
-            <div class="col-lg-2"></div>
+
+            <div class="col-lg-2">
+                <h5>Amazing Results</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow1.png">
+            </div>
+            <div class="col-lg-8">
+                <img class="img-responsive" src="assets/img/app-bg.png" alt="">
+            </div>
+            <div class="col-lg-2">
+                <br>
+                <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow2.png">
+                <h5>Awesome Design</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
         </div>
     </div> <!--/ .container -->
 </div><!--/ #headerwrap -->

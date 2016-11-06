@@ -13,13 +13,11 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     //Frontend
-    mix.less([
-        'theme.less',
-        'app.less'
-    ], 'public/css/app.css');
+    mix.less('app.less', 'public/css/app.css');
     mix.scripts([
         'libs/bootstrap.js',
         'libs/smoothscroll.js',
+        'frontend/app.js'
     ], 'public/js/app.js');
 
     //Admin

@@ -23,7 +23,7 @@
         {{ Form::close() }}
 
         <div class="col-lg-1">
-            @include('elements.delete_button',['route' => ['informations.delete', $item->id]])
+            @include('admin.elements.delete_button',['route' => ['informations.delete', $item->id]])
         </div>
     </div>
 </li>

@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-lg-1 text-center">
-            @include('elements.delete_button',['route' => ['vehicles.delete', $item->id]])
+            @include('admin.elements.delete_button',['route' => ['vehicles.delete', $item->id]])
         </div>
     </div>
 </li>

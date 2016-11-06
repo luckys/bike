@@ -7,13 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>Moto Bike Lanzarote</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home" class="smothscroll">Home</a></li>
-                <li><a href="#desc" class="smothscroll">Description</a></li>
-                <li><a href="#showcase" class="smothScroll">Showcase</a></li>
+                <li class="active"><a href="/" class="smothscroll">Home</a></li>
+                <li><a href="{{route('vehicles.list', 'motorbike')}}" class="smothScroll">{{trans('motorbike')}}</a></li>
+                <li><a href="{{route('vehicles.list', 'bike')}}" class="smothScroll">{{trans('bike')}}</a></li>
+                <li><a href="{{route('vehicles.list', 'mobility')}}" class="smothScroll">{{trans('mobility')}}</a></li>
                 <li><a href="#contact" class="smothScroll">Contact</a></li>
             </ul>
             {{--<ul class="nav navbar-nav navbar-right">

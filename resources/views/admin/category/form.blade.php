@@ -8,8 +8,8 @@
             </div>
             <div class="modal-body">
                 {{ Form::open(array('route' => 'categories.create')) }}
-                @include('elements.vehicle_type_select')
-                @include('elements.translation_input_name')
+                @include('admin.elements.vehicle_type_select')
+                @include('admin.elements.translation_input_name')
 
             </div>
             <div class="modal-footer">

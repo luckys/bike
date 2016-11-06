@@ -12,9 +12,9 @@ Route::group(['middleware' => 'web'], function () {
     // Front-end area
     Route::group(['namespace' => 'Frontend', 'middleware' => Language::class], function () {
         Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-        Route::group(['prefix' => 'vehicles'], function () {
-            Route::get('/{type}/{category?}', ['as' => 'vehicles.list', 'uses' => 'VehicleController@index']);
-            Route::get('/show/{id}', ['as' => 'vehicles.show', 'uses' => 'VehicleController@show']);
+        Route::group(['prefix' => 'rent/lanzarote/'], function () {
+            Route::get('/{type}', ['as' => 'vehicles.list', 'uses' => 'VehicleController@index']);
+            Route::get('/show/{name}', ['as' => 'vehicles.show', 'uses' => 'VehicleController@show']);
         });
     });
 

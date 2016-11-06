@@ -11,7 +11,7 @@
                     <img src="{{$image->url}}" width="100px" height="100px">
                 </div>
                 <div class="col-lg-2">
-                    @include('elements.delete_button', ['route' => ['attachments.delete', $image->id]])
+                    @include('admin.elements.delete_button', ['route' => ['attachments.delete', $image->id]])
                 </div>
             @endforeach
         </div>

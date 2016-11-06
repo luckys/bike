@@ -5,7 +5,7 @@
                 <div class="panel-heading">{{$vehicleInformation->name['es']. " / ". $vehicleInformation->name['en'] ." / ".
                     $vehicleInformation->name['de']}}
                     <div class="pull-right">
-                        @include('elements.delete_button',['route' => ['vehicles.removeinformation',
+                        @include('admin.elements.delete_button',['route' => ['vehicles.removeinformation',
                                              $vehicleInformation->pivot->vehicle_id, $vehicleInformation->id ]])
                     </div>
                 </div>
