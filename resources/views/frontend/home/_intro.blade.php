@@ -3,7 +3,7 @@
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <h1>About MotoRentLanzarote</h1>
+            <img src="{{ asset('/img/logo.png') }}" alt="">
             <br>
             <br>
             <div class="col-lg-4">

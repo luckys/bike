@@ -1,9 +1,14 @@
+@main-color: #7BF0EE;
+@secondary-color: #aaa;
+@font-color: #a9017a;
+@background-color : #f2f2f2;
+
 @import "libs/bootstrap-less/bootstrap";
 @import "theme";
-@import "variables";
 
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+
 
 body, label, .checkbox label {
 	font-weight: 300;
@@ -15,5 +20,78 @@ body, label, .checkbox label {
 		max-width: 100%;
 		max-height: 100%;
 		background-position: center;
+	}
+}
+
+#navigation{
+	.navbar-brand img{
+		width: 65%;
+	}
+}
+
+#vehicle_list {
+	margin-top: 60px;
+	margin-bottom: 40px;
+	/*Panel tabs*/
+
+	.panel-body{
+		padding-bottom: 0px;
+	}
+	.panel-primary {
+		border-color: @background-color;
+	}
+
+	.panel-heading {
+		background-color: white;
+		border: none;
+	}
+
+	.panel-tabs {
+		position: relative;
+		bottom: 0px;
+		clear:both;
+	}
+
+	.panel-tabs > li {
+		float: left;
+		margin-bottom: -1px;
+	}
+
+	.panel-tabs > li > a {
+		margin-right: 12px;
+		margin-top: 4px;
+		line-height: .85;
+		border: 1px solid @main-color;
+		border-radius: 10px;
+		color: @main-color;
+	}
+
+	.panel-tabs > li > a:hover {
+		color: #ffffff;
+		background-color: @main-color;
+	}
+
+	.panel-tabs > li.active > a,
+	.panel-tabs > li.active > a:hover,
+	.panel-tabs > li.active > a:focus {
+		color: @text-color;
+		cursor: default;
+		background-color: @main-color;
+	}
+
+	.tab-pane .row:nth-of-type(even)
+	{
+		background-color: white;
+	}
+	.tab-pane .row:nth-of-type(odd)
+	{
+		background-color: @secondary-color;
+		color: white;
+	}
+
+	.tab-pane .row{
+		img{
+			max-width: 220px;
+		}
 	}
 }

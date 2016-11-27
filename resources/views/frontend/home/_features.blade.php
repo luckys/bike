@@ -5,11 +5,11 @@
             <h1 class="centered">What's New?</h1>
             <br>
             <br>
-            <div class="col-lg-6 centered">
-                <img class="centered" src="{{ asset('/img/mobile.png') }}" alt="">
+            <div class="col-lg-4 centered">
+                @include('frontend.home._facebook')
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <h3>Some Features</h3>
                 <br>
                 <!-- ACCORDION -->

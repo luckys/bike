@@ -13,7 +13,7 @@
              </div>
 
         <div class="col-lg-7">
-            <div style="height:500px;width:500px;max-width:100%;list-style:none; transition: none;overflow:hidden;">
+            <div style="height:300px;width:500px;max-width:100%;list-style:none; transition: none;overflow:hidden;">
                 <div id="gmap-display" style="height:100%; width:100%;max-width:100%;">
                     <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=MotoBike+Lanzarote,+Playa+Blanca,+España&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
                 </div>
