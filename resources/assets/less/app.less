@@ -1,6 +1,7 @@
 @main-color: #7BF0EE;
 @secondary-color: #aaa;
 @font-color: #a9017a;
+@font-secondary-color: #dedede;
 @background-color : #f2f2f2;
 
 @import "libs/bootstrap-less/bootstrap";
@@ -35,7 +36,7 @@ body, label, .checkbox label {
 	/*Panel tabs*/
 
 	.panel-body{
-		padding-bottom: 0px;
+		padding: 0px;
 	}
 	.panel-primary {
 		border-color: @background-color;
@@ -79,14 +80,20 @@ body, label, .checkbox label {
 		background-color: @main-color;
 	}
 
-	.tab-pane .row:nth-of-type(even)
+	.tab-pane .vehicle_list_item:nth-of-type(even)
 	{
 		background-color: white;
+		color: @font-secondary-color;
 	}
-	.tab-pane .row:nth-of-type(odd)
+	.tab-pane .vehicle_list_item:nth-of-type(odd)
 	{
 		background-color: @secondary-color;
 		color: white;
+	}
+
+	.tab-pane .vehicle_list_item{
+		margin-bottom: 20px;
+		text-align: left;
 	}
 
 	.tab-pane .row{

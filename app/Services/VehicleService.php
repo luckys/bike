@@ -27,6 +27,7 @@ class VehicleService
     private function DTO($vehicleItem)
     {
         return [
+            'id' => $vehicleItem->id,
             'name' => $vehicleItem->name[App::getLocale()],
             'prices' => $vehicleItem->prices,
             'type' => $vehicleItem->category->type,
