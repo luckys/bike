@@ -7,8 +7,7 @@
     <meta name="author" content="Dailos Marrero Diaz">
     <title>Moto Bike Lanzarote</title>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet'
-          type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 </head>

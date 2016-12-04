@@ -3,25 +3,23 @@
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <img src="{{ asset('/img/logo.png') }}" alt="">
+            <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/logo.png') }}" alt="">
             <br>
             <br>
             <div class="col-lg-4">
-                <img src="{{ asset('/img/intro01.png') }}" alt="">
-                <h3>Community</h3>
-                <p>See <a href="https://github.com/acacha/adminlte-laravel">Github project</a>, post <a
-                            href="https://github.com/acacha/adminlte-laravel/issues">issues</a> and <a
-                            href="https://github.com/acacha/adminlte-laravel/pulls">Pull requests</a></p>
+                <a href="{{route('vehicles.list','motorbike')}}"><img class="hidden-xs hidden-sm hidden-md vehicle_pic" src="{{asset('/img/home/motorbike.png')}}"></a>
+                <a href="{{route('vehicles.list','motorbike')}}"><h3>@lang('bikes.bikes')</h3></a>
+                <a href="{{route('vehicles.list','motorbike')}}"><p>@lang('home.bike_rent')</p></a>
             </div>
             <div class="col-lg-4">
-                <img src="{{ asset('/img/intro02.png') }}" alt="">
-                <h3>Schedule</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <a href="{{route('vehicles.list','bike')}}"><img class="hidden-xs hidden-sm hidden-md vehicle_pic" src="{{asset('/img/home/bike.png')}}"></a>
+                <a href="{{route('vehicles.list','bike')}}"><h3>@lang('bikes.motorbikes')'</h3></a>
+                <a href="{{route('vehicles.list','bike')}}"><p>@lang('home.motorbike_rent')</p></a>
             </div>
             <div class="col-lg-4">
-                <img src="{{ asset('/img/intro03.png') }}" alt="">
-                <h3>Monitoring</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <a href="{{route('vehicles.list','mobility')}}"><img class="hidden-xs hidden-sm hidden-md vehicle_pic" src="{{ asset('/img/home/bike.png') }}" alt=""></a>
+                <a href="{{route('vehicles.list','mobility')}}"><h3>@lang('bikes.mobility')'</h3></a>
+                <a href="{{route('vehicles.list','mobility')}}"><p>@lang('home.mobility_rent')</p></a>
             </div>
         </div>
         <br>

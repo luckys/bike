@@ -1,14 +1,15 @@
 @main-color: #7BF0EE;
 @secondary-color: #aaa;
 @font-color: #a9017a;
-@font-secondary-color: #dedede;
+@font-secondary-color: #333;
 @background-color : #f2f2f2;
 
 @import "libs/bootstrap-less/bootstrap";
 @import "theme";
 
 @btn-font-weight: 300;
-@font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+@font-family-sans-serif: "Lora", Helvetica, Arial, sans-serif;
+
 
 
 body, label, .checkbox label {
@@ -20,13 +21,22 @@ body, label, .checkbox label {
 		background-image: url("/img/home/teaser.jpg");
 		max-width: 100%;
 		max-height: 100%;
+		min-height: 300px;
 		background-position: center;
+	}
+	#intro{
+		.vehicle_pic{
+			max-width: 300px;
+		}
 	}
 }
 
 #navigation{
-	.navbar-brand img{
-		width: 65%;
+	.navbar-brand {
+		width: 80%;
+		img {
+			width: 65%;
+		}
 	}
 }
 
@@ -94,6 +104,19 @@ body, label, .checkbox label {
 	.tab-pane .vehicle_list_item{
 		margin-bottom: 20px;
 		text-align: left;
+		padding: 30px;
+		.price{
+			//text-align: right;
+			margin-top: 10px;
+			margin-bottom: 30px;
+			font-size: 2em;
+			span{
+				font-size: 1.5em;
+			}
+		}
+		.features{
+			padding: 30px;
+		}
 	}
 
 	.tab-pane .row{
@@ -101,4 +124,14 @@ body, label, .checkbox label {
 			max-width: 220px;
 		}
 	}
+}
+
+
+.bike-button {
+	color: #222;
+	background-color: @main-color !important;
+	border: 1px solid @main-color;
+	width: 200px;
+	text-align: center;
+	margin-bottom: 40px;
 }
