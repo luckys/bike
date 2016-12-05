@@ -13,17 +13,21 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     //Frontend
-    mix.less('app.less', 'public/css/app.css');
+    mix.less([
+        'libs/admin-lte/AdminLTE.less',
+        'libs/datepicker.css',
+        'app.less',
+    ], 'public/css/app.css');
     mix.scripts([
         'libs/bootstrap.js',
         'libs/smoothscroll.js',
+        'libs/datepicker/datepicker.js',
         'frontend/app.js'
     ], 'public/js/app.js');
 
     //Admin
     mix.less([
         'libs/bootstrap-less/bootstrap.less',
-        'libs/admin-lte/AdminLTE.less',
         'libs/admin-lte/skins/skin-blue.less',
         'admin/admin.less'
     ], 'public/css/admin.css');

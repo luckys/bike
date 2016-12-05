@@ -20,12 +20,12 @@ class InformationRepository
 
     public function create($fields)
     {
-        Information::create($fields);
+        $this->information->create($fields);
     }
 
     public function delete($id)
     {
-        $information = Information::findOrFail($id);
+        $information = $this->information->findOrFail($id);
         if($information->vehicles->isEmpty())
         {
             $information->delete();
@@ -36,7 +36,7 @@ class InformationRepository
 
     public function update($id,$name)
     {
-        $information = Information::findOrFail($id);
+        $information = $this->information->findOrFail($id);
         $information->name = $name;
         $information->save();
     }
@@ -44,7 +44,7 @@ class InformationRepository
     public function sort($list)
     {
         foreach ($list as $pos => $id){
-            $information = Information::findOrFail($id);
+            $information = $this->information->findOrFail($id);
             $information->position = $pos;
             $information->save();
         }

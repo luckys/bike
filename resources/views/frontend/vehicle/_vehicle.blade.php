@@ -18,7 +18,7 @@
                 @lang('vehicle_list.starting') <span>{{$vehicle['prices'][1]}} </span>€
             </div>
 
-            <button type="button" class="btn btn-primary bike-button"><h4>@lang('vehicle_list.reserve')</h4></button>
+            <a href="{{route('reservation.show', [$vehicle['id'] ,$vehicle['name']] )}}"  class="btn btn-primary bike-button"><h4>@lang('vehicle_list.reserve')</h4></a>
             <br>
             <a data-toggle="collapse" data-target="#features_{{$vehicle['id']}}">@lang('vehicle_list.more')</a>
         </div>

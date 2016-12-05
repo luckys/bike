@@ -16,6 +16,9 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/{type}', ['as' => 'vehicles.list', 'uses' => 'VehicleController@index']);
             Route::get('/show/{name}', ['as' => 'vehicles.show', 'uses' => 'VehicleController@show']);
         });
+        Route::group(['prefix' => 'reserve/'], function () {
+            Route::get('/{vehicleid}/{vehiclename}', ['as' => 'reservation.show', 'uses' => 'ReservationController@show']);
+        });
     });
 
     //Admin area

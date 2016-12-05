@@ -24,6 +24,13 @@ class VehicleService
         return $vehicles;
     }
 
+    public function get($id)
+    {
+        return $this->DTO($this->vehicleRepository->get($id));
+    }
+
+
+
     private function DTO($vehicleItem)
     {
         return [

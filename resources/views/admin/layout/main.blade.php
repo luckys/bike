@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="es">
 
 @section('htmlheader')
@@ -33,26 +30,16 @@ desired effect
 <div class="wrapper">
 
     @include('admin.layout.partials.mainheader')
-
     @include('admin.layout.partials.sidebar')
-
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
         @include('admin.layout.partials.contentheader')
-
-        <!-- Main content -->
         <section class="content">
-            <!-- Your Page Content Here -->
             @yield('main-content')
-        </section><!-- /.content -->
-    </div><!-- /.content-wrapper -->
-
+        </section>
+    </div>
     @include('admin.layout.partials.controlsidebar')
-
     @include('admin.layout.partials.footer')
-
-</div><!-- ./wrapper -->
+</div>
 
 @section('scripts')
     @include('admin.layout.partials.scripts')
