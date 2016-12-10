@@ -1,9 +1,7 @@
 <?php
 
 return [
-
-    'motorbike' => 'Motos',
-    'bike' => 'Bicicletas',
-    'mobility' => 'Movilidad',
-
+    'motorbike' => 'Motocicletas',
+    'bike' => 'Biciletas',
+    'mobility' => 'Vehículos de movilidad reducida',
 ];

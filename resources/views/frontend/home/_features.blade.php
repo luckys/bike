@@ -2,7 +2,7 @@
 <div id="features">
     <div class="container">
         <div class="row">
-            <h1 class="centered">What's New?</h1>
+            <h1 class="centered">@lang('home.features.title')</h1>
             <br>
             <br>
             <div class="col-lg-4 centered">

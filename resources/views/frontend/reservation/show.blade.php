@@ -10,8 +10,8 @@
 
                     </div>
                     <div class="box-body">
-                        @include('frontend.reservation.show.vehicle_info')
-                        @include('frontend.reservation.show.form')
+                        @include('frontend.reservation.show.main_info')
+                        @include('frontend.reservation.show.extra_info')
                     </div>
                 </div>
             </div>

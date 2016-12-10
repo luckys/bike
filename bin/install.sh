@@ -8,3 +8,4 @@ npm install
 echo "generating key"
 php artisan key:generate
 echo "bye"
+gulp

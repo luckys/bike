@@ -28,6 +28,7 @@ elixir(function(mix) {
     //Admin
     mix.less([
         'libs/bootstrap-less/bootstrap.less',
+        'libs/admin-lte/AdminLTE.less',
         'libs/admin-lte/skins/skin-blue.less',
         'admin/admin.less'
     ], 'public/css/admin.css');

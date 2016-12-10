@@ -1,7 +1,7 @@
 <?php
 
 return [
-
-    'test' => 'Test in english',
-
+    'motorbike' => 'Motorbikes',
+    'bike' => 'Bicycles',
+    'mobility' => 'Reduced mobility vehicles',
 ];

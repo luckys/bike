@@ -16,13 +16,13 @@
                     <a href="/" class="smothscroll">Home</a>
                 </li>
                 <li @if(route('vehicles.list', 'motorbike') == url()->current()) class="active" @endif>
-                    <a href="{{route('vehicles.list', 'motorbike')}}" >{{ucfirst(trans('motorbike'))}}</a>
+                    <a href="{{route('vehicles.list', 'motorbike')}}" >{{ucfirst(trans('bike.motorbike'))}}</a>
                 </li>
                 <li @if(route('vehicles.list', 'bike') == url()->current()) class="active" @endif>
-                    <a href="{{route('vehicles.list', 'bike')}}" >{{ucfirst(trans('bike'))}}</a>
+                    <a href="{{route('vehicles.list', 'bike')}}" >{{ucfirst(trans('bike.bike'))}}</a>
                 </li>
                 <li @if(route('vehicles.list', 'mobility') == url()->current()) class="active" @endif>
-                    <a href="{{route('vehicles.list', 'mobility')}}">{{ucfirst(trans('mobility'))}}</a>
+                    <a href="{{route('vehicles.list', 'mobility')}}">{{ucfirst(trans('bike.mobility'))}}</a>
                 </li>
                 <li><a href="#contact" class="smothScroll">Contact</a></li>
             </ul>

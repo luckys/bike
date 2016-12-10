@@ -4,20 +4,6 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-        <!-- Sidebar user panel (optional) -->
-        @if (! Auth::guest())
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{asset('/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
-                </div>
-                <div class="pull-left info">
-                    <p>{{ Auth::user()->name }}</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-        @endif
-
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu nav">
             <li class="{!! Request::is('admin/categories') ? 'active' : '' !!}"><a href="{{ route('categories') }}"><i class='fa fa-bookmark-o'></i> <span>Categorias</span></a></li>
@@ -30,6 +16,7 @@
                     <li class="{!! Request::is('admin/vehicles/mobility') ? 'active' : '' !!}"><a href="{{ route('vehicles',['type' => \App\Models\Category::TYPE_MOBILITY]) }}">Movilidad reducida</a></li>
                 </ul>
             </li>
+            <li class="{!! Request::is('admin/translations') ? 'active' : '' !!}"><a href="{{ url('admin/translations') }}"><i class='fa fa-language'></i> <span>Traducciones</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
     </section>

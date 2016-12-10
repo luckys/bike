@@ -11,7 +11,7 @@ class Reservation extends Model
     protected $table = 'reservations';
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-    protected $fillable = ['name', 'email', 'start', 'end' , 'options', 'vehicle_id'];
+    protected $fillable = ['renter_name', 'renter_email', 'rent_start', 'rent_end' , 'rent_options', 'vehicle_id', 'tos'];
     protected $casts = ['options' => 'array'];
 
     //Relations

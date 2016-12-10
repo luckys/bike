@@ -10,7 +10,8 @@
         "acacha/admin-lte-template-laravel": "^2.0",
         "laravelcollective/html": "5.2.*",
         "barryvdh/laravel-debugbar": "^2.2",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "barryvdh/laravel-translation-manager": "0.2.x"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
