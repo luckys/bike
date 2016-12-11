@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Moto Bike Lanzarote">
     <meta name="author" content="Dailos Marrero Diaz">
-    <title>Moto Bike Lanzarote</title>
+    <title>Moto & Bike Lanzarote</title>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
@@ -23,6 +23,14 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+<script>
+    var bike = {
+        locale : "{{App::getLocale()}}"
+    };
+</script>
+
 
     @include('frontend.layout._navbar')
     @yield('content')

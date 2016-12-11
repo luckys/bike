@@ -19,9 +19,16 @@ class ReservationController extends Controller
         return view('frontend.reservation.show', ['vehicle' => $this->vehicleService->get($vehicleid)]);
     }
 
-    public function confirm(Request $request)
+    public function create(Request $request)
     {
-
+        $this->validate($request,[
+           'renter_name' => 'required',
+            'renter_email' => 'required|email',
+            'renter_birthdate' => 'required',
+            'tos' => 'required',
+            'vehicle_id' => 'required',
+        ]);
+        dd($request->all());
     }
 
 }

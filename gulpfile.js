@@ -20,14 +20,16 @@ elixir(function(mix) {
     //Frontend
     mix.less([
         'plugins/adminLTE/less/AdminLTE.less',
-        'plugins/datepicker/datepicker3.css',
+        'plugins/adminLTE/less/skins/skin-blue.less',
+        'plugins/daterangepicker/daterangepicker.css',
         'less/frontend.less',
     ], 'public/css/app.css');
     mix.scripts([
         'plugins/jQuery/jQuery-2.1.4.min.js',
         'plugins/bootstrap/bootstrap.js',
         'plugins/smoothscroll/smoothscroll.js',
-        'plugins/datepicker/bootstrap-datepicker.js',
+        'plugins/moment/moment.min.js',
+        'plugins/daterangepicker/daterangepicker.js',
         'js/frontend.js'
     ], 'public/js/app.js');
 
