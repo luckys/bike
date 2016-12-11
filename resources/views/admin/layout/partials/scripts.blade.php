@@ -1,7 +1,3 @@
-<script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
-<script src="{{ asset('/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('/plugins/bootstrap-switch/bootstrap-switch.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/plugins/cropper/cropper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/admin.js') }}" type="text/javascript"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>

@@ -10,6 +10,6 @@
 
 @section('main-content')
     @include('admin.vehicle.form',['categories' => $categories,'type' => $type])
-    @include('admin.vehicle.group', ['items' => $vehicles, 'title' => @lang('bikes.'. $type),'class' => 'success' ])
+    @include('admin.vehicle.group', ['items' => $vehicles, 'title' => trans('bikes.'. $type),'class' => 'success' ])
 @endsection
 

@@ -7,7 +7,7 @@
             <div class="col-lg-10">
                 <div class="box box-info">
                     <div class="box-header with-border">
-
+                        <h2>{{$vehicle['name']}}</h2>
                     </div>
                     <div class="box-body">
                         @include('frontend.reservation.show.main_info')

@@ -13,7 +13,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li @if(route('home') == url()->current()) class="active" @endif>
-                    <a href="/" class="smothscroll">Home</a>
+                    <a href="/" class="smothscroll">{{ucfirst(trans('bike.home'))}}</a>
                 </li>
                 <li @if(route('vehicles.list', 'motorbike') == url()->current()) class="active" @endif>
                     <a href="{{route('vehicles.list', 'motorbike')}}" >{{ucfirst(trans('bike.motorbike'))}}</a>
@@ -24,7 +24,7 @@
                 <li @if(route('vehicles.list', 'mobility') == url()->current()) class="active" @endif>
                     <a href="{{route('vehicles.list', 'mobility')}}">{{ucfirst(trans('bike.mobility'))}}</a>
                 </li>
-                <li><a href="#contact" class="smothScroll">Contact</a></li>
+                <li><a href="#contact" class="smothScroll">{{ucfirst(trans('bike.contact'))}}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
