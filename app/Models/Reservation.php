@@ -11,12 +11,16 @@ class Reservation extends Model
     protected $table = 'reservations';
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-    protected $fillable = ['renter_name', 'renter_email', 'rent_start', 'rent_end' , 'rent_options', 'vehicle_id', 'tos'];
+    protected $fillable = ['renter_name', 'renter_email', 'rent_start', 'rent_end' , 'code', 'options', 'vehicle_id', 'tos', 'notes'];
     protected $casts = ['options' => 'array'];
 
     //Relations
-    public function vehicles()
+    public function vehicle()
     {
         return $this->hasOne('App\Models\Vehicle');
+    }
+
+    public function renter(){
+        return $this->hasOne('App\Models\User');
     }
 }

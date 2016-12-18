@@ -10,11 +10,6 @@
                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                 <input name="renter_email" type="email" class="form-control" placeholder="@lang("reservation.form_inputs.email")">
             </div>
-
-            <div class="input-group margin-bottom">
-                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
-                <input name="rent_birthdate" type="text" class="form-control pull-right" id="renter_birthdate" placeholder="@lang("reservation.form_inputs.birthdate")">
-            </div>
         </div>
         <div class="col-md-6">
             <div class="input-group margin-bottom">
@@ -23,7 +18,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="tos">@lang("reservation.form_inputs.end")
+                    <input type="checkbox" name="tos">@lang("reservation.form_inputs.tos")
                 </label>
             </div>
             <div id="reservation_amount">

@@ -16,8 +16,7 @@ class ReservationRepository
 
     public function getList()
     {
-
-        return $this->reservation->with('vehicles')->orderBy('position')->paginate();
+        return $this->reservation->with('vehicles')->orderBy('rent_start')->paginate();
     }
 
     public function create($fields)
@@ -39,4 +38,8 @@ class ReservationRepository
         $reservation->delete();
     }
 
+    public function findByCode($code)
+    {
+        return $this->reservation->where('code', $code)->count();
+    }
 }

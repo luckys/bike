@@ -14,16 +14,15 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('reservation_code')->unique();
+            $table->string('code')->unique();
             $table->string('renter_name');
             $table->string('renter_email');
-            $table->string('renter_is_valid');
-            $table->date('renter_birthday');
             $table->dateTime('rent_start');
             $table->dateTime('rent_end');
             $table->integer('rent_price');
             $table->integer('status');
             $table->text('options');
+            $table->text('notes');
             $table->boolean('tos');
             $table->integer('vehicle_id')->unsigned();
             $table->timestamps();
