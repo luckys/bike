@@ -24,8 +24,10 @@ Route::group(['middleware' => 'web'], function () {
 
     //Admin area
     Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function () {
-        Route::get('/', ['as' => 'admin', 'uses' => 'CategoryController@index']);
+        Route::get('/', ['as' => 'admin', 'uses' => 'ReservationController@index']);
 
+        Route::get('/reservations', ['as' => 'reservations', 'uses' => 'ReservationController@index']);
+        
         Route::get('/vehicles/{type}', ['as' => 'vehicles', 'uses' => 'VehicleController@index']);
         Route::post('/vehicles', ['as' => 'vehicles.create', 'uses' => 'VehicleController@create']);
         Route::put('/vehicles/sort', ['as' => 'vehicles.sort', 'uses' => 'VehicleController@sort']);

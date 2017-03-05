@@ -6,6 +6,7 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu nav">
+            <li class="{!! Request::is('admin/reservations') ? 'active' : '' !!}"><a href="{{ route('reservations') }}"><i class='fa fa-calendar-o'></i> <span>Reservas</span></a></li>
             <li class="{!! Request::is('admin/categories') ? 'active' : '' !!}"><a href="{{ route('categories') }}"><i class='fa fa-bookmark-o'></i> <span>Categorias</span></a></li>
             <li class="{!! Request::is('admin/informations') ? 'active' : '' !!}"><a href="{{ route('informations') }}"><i class='fa fa-cubes'></i> <span>Características</span></a></li>
             <li class="treeview {!! Request::is('admin/vehicles/*') ? 'active' : '' !!}">

@@ -9,19 +9,40 @@ use App\Http\Controllers\Controller;
 
 class ReservationController extends Controller
 {
+    /**
+     * @var VehicleService
+     */
     protected $vehicleService;
+
+    /**
+     * @var ReservationService
+     */
     protected $reservationService;
 
+    /**
+     * ReservationController constructor.
+     * @param VehicleService $vehicleService
+     * @param ReservationService $reservationService
+     */
     public function __construct(VehicleService $vehicleService, ReservationService $reservationService)
     {
         $this->vehicleService = $vehicleService;
         $this->reservationService = $reservationService;
     }
 
-    public function show($vehicleid, $vehiclename){
+    /**
+     * @param $vehicleid
+     * @param $vehiclename
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($vehicleid, $vehiclename){ //vehicleName needed for SEO
         return view('frontend.reservation.show', ['vehicle' => $this->vehicleService->get($vehicleid)]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create(Request $request)
     {
         $this->validate($request,[
