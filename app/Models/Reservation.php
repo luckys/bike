@@ -10,7 +10,7 @@ class Reservation extends Model
     use SoftDeletes;
     protected $table = 'reservations';
 
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'rent_start', 'rent_end'];
     protected $fillable = ['renter_name', 'renter_email', 'rent_start', 'rent_end' , 'code', 'options', 'vehicle_id', 'tos', 'notes'];
     protected $casts = ['options' => 'array'];
 

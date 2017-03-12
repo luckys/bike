@@ -64,8 +64,6 @@ class ReservationService
     public function getList($status = null){
         $reservations = $this->reservationRepository->getList($status);
         foreach ($reservations as $reservation){
-            $reservation->rent_start = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_start);
-            $reservation->rent_end = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_end);
             $reservation->rent_duration = ceil($this->getRentDuration($reservation)/24);
             $reservation->rent_percentage = $this->getPercentage($reservation);
         };

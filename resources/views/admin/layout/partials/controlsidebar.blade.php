@@ -9,12 +9,12 @@
     <div class="tab-content">
         <!-- Home tab content -->
         <div class="tab-pane active" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Reservas para hoy</h3>
+            <h3 class="control-sidebar-heading">MotoRent</h3>
             <ul class='control-sidebar-menu'>
                 <li>
                     <div class="menu-info">
-                        <h4 class="control-sidebar-subheading">Martin Riedel</h4>
-                        <p>Yamaha mx-400</p>
+                        <h4 class="control-sidebar-subheading">Dailos Marrero</h4>
+                        <p>dailos@gmail.com</p>
                     </div>
                 </li>
             </ul><!-- /.control-sidebar-menu -->

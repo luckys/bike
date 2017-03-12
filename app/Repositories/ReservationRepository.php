@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Reservation;
+use Carbon\Carbon;
 
 class ReservationRepository
 {
@@ -23,6 +24,12 @@ class ReservationRepository
             }
         }
         return $query->orderBy('rent_start')->paginate(10);
+    }
+
+    public function getListToday($type)
+    {
+        return  $this->reservation->with('vehicle')->whereBetween('rent_'.$type , [Carbon::today(), Carbon::tomorrow()] )->
+        orderBy('rent_'.$type, 'ASC')->get();
     }
 
     public function create($fields)
