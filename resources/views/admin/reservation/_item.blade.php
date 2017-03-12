@@ -42,10 +42,10 @@
     </div>
 
     <div class="box-body">
-        <div class="col-md-6">
+        <div class="col-md-6 reservations-notes">
             {!! Form::open(['route' => ['reservations.setnote', $reservation->id]]) !!}
                 <textarea class="form-control" name="note" rows="4" placeholder="Introduce una nota">{{$reservation->notes}}</textarea>
-                <button type="submit" class="btn btn-block btn-success">Guardar</button>
+                <button type="submit" class="btn btn-block btn-success pull-right">Guardar</button>
             {!! Form::close() !!}
         </div>
         <div class="col-md-6">

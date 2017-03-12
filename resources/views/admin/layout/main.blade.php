@@ -34,7 +34,9 @@ desired effect
     <div class="content-wrapper">
         @include('admin.layout.partials.contentheader')
         <section class="content">
-            @yield('main-content')
+            <div class="row">
+                @yield('main-content')
+            </div>
         </section>
     </div>
     @include('admin.layout.partials.controlsidebar')
