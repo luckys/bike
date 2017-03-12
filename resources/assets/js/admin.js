@@ -46,6 +46,13 @@ $(function () {
             });
         }
     });
+    $('#reservation-filter button').click(function () {
+        $('#reservation-list').html('<div class="overlay"> <i class="fa fa-refresh fa-spin"></i> </div>');
+        $.get($(this).data('url'), function(data){
+            $('#reservation-list').html(data);
+        });
+    });
+
 });
 
 var vehicle = {
@@ -97,4 +104,8 @@ var vehicle = {
             window.location.reload();
         });
     },
-}
+};
+var reservations = {
+    
+    
+};

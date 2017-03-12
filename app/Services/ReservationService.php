@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App;
 use App\Repositories\ReservationRepository;
+use Carbon\Carbon;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ReservationService
 {
@@ -30,6 +32,7 @@ class ReservationService
         list($reservation['rent_start'], $reservation['rent_end']) = explode("-", $reservation['rent_period']);
         $reservation['code'] = $this->generateCode($reservation);
         $reservation['rent_price'] = $this->calculatePrice($reservation);
+        $reservation['status'] = 0;
         return $this->reservationRepository->create($reservation);
     }
 
@@ -57,6 +60,30 @@ class ReservationService
         $price = 1;
         return $price;
     }
-    
+
+    public function getList($filter = null){
+        $reservations = $this->reservationRepository->getList($filter);
+        foreach ($reservations as $reservation){
+            $reservation->rent_start = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_start);
+            $reservation->rent_end = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_end);
+            $reservation->rent_duration = ceil($this->getRentDuration($reservation)/24);
+            $reservation->rent_percentage = $this->getPercentage($reservation);
+        };
+        return $reservations;
+    }
+
+    private function getRentDuration($reservation)
+    {
+        return $reservation->rent_end->diffInHours($reservation->rent_start);
+    }
+
+    private function getPercentage($reservation)
+    {
+        $total = $this->getRentDuration($reservation);
+        $completed = Carbon::now()->diffInHours($reservation->rent_start);
+        $result = $completed/$total * 100;
+        $result = $result > 100 ? 100 : $result;
+        return $result;
+    }
 
 }

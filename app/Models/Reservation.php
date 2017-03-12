@@ -14,13 +14,17 @@ class Reservation extends Model
     protected $fillable = ['renter_name', 'renter_email', 'rent_start', 'rent_end' , 'code', 'options', 'vehicle_id', 'tos', 'notes'];
     protected $casts = ['options' => 'array'];
 
+    const STATUS_RESERVED = 0;
+    const STATUS_COLLECTED = 1;
+    const STATUS_COMPLETED = 2;
+
     //Relations
     public function vehicle()
     {
-        return $this->hasOne('App\Models\Vehicle');
+        return $this->belongsTo('App\Models\Vehicle');
     }
 
     public function renter(){
-        return $this->hasOne('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 }

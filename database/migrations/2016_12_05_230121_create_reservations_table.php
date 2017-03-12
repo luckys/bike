@@ -21,8 +21,8 @@ class CreateReservationsTable extends Migration
             $table->dateTime('rent_end');
             $table->integer('rent_price');
             $table->integer('status');
-            $table->text('options');
-            $table->text('notes');
+            $table->text('options')->nullable();
+            $table->text('notes')->nullable();
             $table->boolean('tos');
             $table->integer('vehicle_id')->unsigned();
             $table->timestamps();

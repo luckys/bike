@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('contentheader_title')
-    @lang('bikes.'. $type)
+    {{--@lang('bikes.'. $type)--}}
 @endsection
 
 @section('contentheader_actions')

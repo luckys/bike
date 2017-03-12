@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 
 @section('contentheader_title')
-    Características
 @endsection
 
 @section('contentheader_actions')

@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 
 @section('contentheader_title')
-    Categorias
 @endsection
 
 @section('contentheader_actions')

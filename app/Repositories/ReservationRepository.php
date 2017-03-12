@@ -14,9 +14,15 @@ class ReservationRepository
         $this->reservation = $reservation;
     }
 
-    public function getList()
+    public function getList($filter = null)
     {
-        return $this->reservation->with('vehicles')->orderBy('rent_start')->paginate();
+        $query = $this->reservation->with('vehicle', 'vehicle.attachments');
+        if($filter){
+            if(isset($filter['status']) && $filter['status'] !== ''){
+                $query->where('status', $filter['status']);
+            }
+        }
+        return $query->orderBy('rent_start')->paginate(10);
     }
 
     public function create($fields)

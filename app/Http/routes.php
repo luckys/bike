@@ -27,6 +27,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/', ['as' => 'admin', 'uses' => 'ReservationController@index']);
 
         Route::get('/reservations', ['as' => 'reservations', 'uses' => 'ReservationController@index']);
+        Route::post('/reservations/{reservation}/status', ['as' => 'reservations.setstatus', 'uses' => 'ReservationController@setStatus']);
         
         Route::get('/vehicles/{type}', ['as' => 'vehicles', 'uses' => 'VehicleController@index']);
         Route::post('/vehicles', ['as' => 'vehicles.create', 'uses' => 'VehicleController@create']);
