@@ -61,8 +61,8 @@ class ReservationService
         return $price;
     }
 
-    public function getList($filter = null){
-        $reservations = $this->reservationRepository->getList($filter);
+    public function getList($status = null){
+        $reservations = $this->reservationRepository->getList($status);
         foreach ($reservations as $reservation){
             $reservation->rent_start = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_start);
             $reservation->rent_end = Carbon::createFromFormat('Y-m-d H:i:s' ,$reservation->rent_end);

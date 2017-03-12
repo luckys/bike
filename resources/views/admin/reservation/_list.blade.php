@@ -5,6 +5,6 @@
         </div>
     @endforeach
     <div class="pull-right">
-        {{ $reservations->links() }}
+        {{ $paginator->links() }}
     </div>
 @endif

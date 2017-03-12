@@ -20,19 +20,27 @@ class ReservationController extends Controller
 
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $filter = [];
-            if($request->has('filter-status')){
-                $filter['status'] = $request->input('filter-status');
-            }
-            return view('admin.reservation._list', ['reservations' => $this->reservationService->getList($filter)]);
+        $status = null;
+        if($request->has('status')){
+            $status = $request->input('status');
         }
-        return view('admin.reservation.index', ['reservations' => $this->reservationService->getList()]);
+        $reservations = $this->reservationService->getList($status);
+        return view('admin.reservation.index', [
+            'reservations' => $reservations,
+            'paginator' => $reservations->appends('status', $status)
+        ]);
     }
 
     public function setStatus(Request $request, Reservation $reservation)
     {
         $reservation->status = $request->input('status');
+        $reservation->save();
+        return back();
+    }
+
+    public function setNote(Request $request, Reservation $reservation)
+    {
+        $reservation->notes = $request->input('note');
         $reservation->save();
         return back();
     }
